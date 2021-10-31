@@ -1,0 +1,11 @@
+.nav-menu {
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    @apply text-sm font-semibold;
+  }
+  
+  .sub-menu {
+    @apply hidden;
+  }
+}

@@ -1,5 +1,4 @@
 const path = require('path');
-const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const glob = require('glob');
@@ -24,13 +23,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [miniCssExtractPlugin.loader, 'css-loader','postcss-loader']
-      },
-      {
-        test: /\.s[ac]ss$/,
+        test: /\.(sa|sc|c)ss$/,
         exclude: /node_modules/,
-        use: [miniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader','postcss-loader','sass-loader']
       }
     ]
   }
