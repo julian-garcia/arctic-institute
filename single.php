@@ -1,4 +1,6 @@
 <?php get_header(); ?>
-<h1 class="text-3xl"><?php wp_title(''); ?></h1> 
-<?php the_post(); get_template_part('template-parts/content', 'article'); ?>
+<div class="container max-w-4xl mx-auto">
+  <h1 class="text-3xl"><?php wp_title(''); ?></h1>
+  <?php the_post(); get_template_part('template-parts/content', 'article'); ?>
+</div>
 <?php get_footer(); ?>

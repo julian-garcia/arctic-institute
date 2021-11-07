@@ -1,5 +1,8 @@
 @import './navigation';
 @import './home';
+@import './section';
+@import './card';
+@import './button';
 
 .custom-logo {
   max-width: 350px;
@@ -7,17 +10,21 @@
 }
 
 h2 {
-  @apply text-2xl font-bold font-serif;
+  @apply text-2xl font-bold font-serif text-black mb-4;
 }
 
 h3 {
-  @apply text-xl font-bold font-serif;
+  @apply text-xl font-bold font-serif text-black;
 }
 
 p {
-  @apply mb-3 font-sans;
+  @apply mb-3 font-sans text-black max-w-4xl;
 }
 
 a {
   @apply font-extrabold;
+}
+
+hr {
+  @apply max-w-xs mx-auto my-8 border-b-0 border-t-2 border-blue-light;
 }

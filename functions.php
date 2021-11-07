@@ -14,6 +14,7 @@ function enqueue_styles() {
 }
 
 function enqueue_script() {
+  $version = wp_get_theme()->get('Version');
   wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/assets/dist/main.bundle.js', array(), $version, true );
 }
 

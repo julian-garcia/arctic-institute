@@ -8,9 +8,9 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       blue: {
-        light: '#05507A',
+        light: '#052537',
         DEFAULT: '#05507A',
-        dark: '#05507A',
+        dark: '#032538',
       },
       white: {
         light: '#fff',
@@ -22,6 +22,12 @@ module.exports = {
         DEFAULT: '#032538',
         dark: '#032538',
       },
+      news: {
+        DEFAULT: '#F6AE2D',
+        alt1: '#F68A2D',
+        alt2: '#E25E34',
+        alt3: '#C5283D'
+      }
     }
   },
   purge: [

@@ -1,0 +1,26 @@
+.section {
+  @apply px-2 py-2 sm:px-0 md:py-12 relative;
+
+  &.limit, .limit {
+    @apply max-w-5xl mx-auto;
+  }
+
+  &.dark {
+    @apply bg-blue-dark;
+
+    &.curve-after::after {
+      content: '';
+      background-image: url('../images/curve.svg');
+
+      @apply absolute h-32 bg-no-repeat bg-cover md:-bottom-24 w-full left-0;
+    }
+  }
+
+  &.mid {
+    @apply bg-blue;
+
+    .wp-block-columns {
+      @apply max-w-5xl mx-auto;
+    }
+  }
+}

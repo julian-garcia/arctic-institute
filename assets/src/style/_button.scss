@@ -1,0 +1,34 @@
+.button {
+  border-radius: 2px;
+  @apply p-3 uppercase m-3 cursor-pointer;
+
+  &.blue {
+    @apply bg-blue text-white border-blue border-solid border-2 hover:bg-blue-dark hover:border-blue-dark py-3.5;
+  }
+
+  &.clear {
+    &:hover {
+      @apply py-3.5;
+    }
+    @apply bg-transparent text-white border-white border-solid border-2 hover:bg-blue 
+    hover:border-blue;
+  }
+}
+.wp-block-button {
+
+}
+.wp-block-button__link {
+  border-radius: 2px;
+  @apply p-3 uppercase m-3 cursor-pointer;
+
+  .blue & {
+    @apply bg-blue text-white border-blue border-solid border-2 hover:bg-blue-dark hover:border-blue-dark;
+  }
+
+  .outline & {
+    @apply bg-transparent text-blue border-blue border-solid border-2 hover:bg-blue 
+    hover:border-blue hover:text-white;
+  }
+
+  
+}
