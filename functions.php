@@ -38,6 +38,33 @@ function widget_areas() {
       'description' => 'Footer Widget Area',
     )
   );
+  register_sidebar( 
+    array(
+      'before_widget' => '',
+      'after_widget' => '',
+      'name' => 'Footer Column 1',
+      'id' => 'footer-col-1',
+      'description' => 'Footer Column 1',
+    )
+  );
+  register_sidebar( 
+    array(
+      'before_widget' => '',
+      'after_widget' => '',
+      'name' => 'Footer Column 2',
+      'id' => 'footer-col-2',
+      'description' => 'Footer Column 2',
+    )
+  );
+  register_sidebar( 
+    array(
+      'before_widget' => '',
+      'after_widget' => '',
+      'name' => 'Footer Column 3',
+      'id' => 'footer-col-3',
+      'description' => 'Footer Column 3',
+    )
+  );
 }
 
 add_action( 'after_setup_theme', 'config_theme_support' );

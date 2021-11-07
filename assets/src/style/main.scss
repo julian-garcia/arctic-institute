@@ -3,6 +3,7 @@
 @import './section';
 @import './card';
 @import './button';
+@import './footer';
 
 .custom-logo {
   max-width: 350px;
@@ -18,7 +19,7 @@ h3 {
 }
 
 p {
-  @apply mb-3 font-sans text-black max-w-4xl;
+  @apply mb-3 font-sans text-black max-w-4xl text-current;
 }
 
 a {

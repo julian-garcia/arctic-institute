@@ -6,7 +6,7 @@ module.exports = {
     },
     colors: {
       transparent: 'transparent',
-      current: 'currentColor',
+      current: 'inherit',
       blue: {
         light: '#052537',
         DEFAULT: '#05507A',
@@ -20,7 +20,7 @@ module.exports = {
       black: {
         light: '#032538',
         DEFAULT: '#032538',
-        dark: '#032538',
+        dark: '#000',
       },
       news: {
         DEFAULT: '#F6AE2D',
