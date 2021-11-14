@@ -11,7 +11,7 @@ footer {
       background-image: url(../images/right-arrow-alt.svg);
       width: 20px;
       height: 20px;
-      @apply absolute bg-no-repeat bg-contain -right-6
+      @apply absolute bg-no-repeat bg-contain -right-6 top-0;
     }
   }
 

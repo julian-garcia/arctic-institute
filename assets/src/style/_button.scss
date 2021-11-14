@@ -1,6 +1,6 @@
 .button {
   border-radius: 2px;
-  @apply p-3 uppercase m-3 cursor-pointer;
+  @apply p-3 uppercase my-3 cursor-pointer block sm:inline-block;
 
   &.blue {
     @apply bg-blue text-white border-blue border-solid border-2 hover:bg-blue-dark hover:border-blue-dark py-3.5;
@@ -14,12 +14,12 @@
     hover:border-blue;
   }
 }
-.wp-block-button {
 
-}
+.wp-block-buttons { @apply gap-8; }
+
 .wp-block-button__link {
   border-radius: 2px;
-  @apply p-3 uppercase m-3 cursor-pointer;
+  @apply p-3 my-3 uppercase cursor-pointer block sm:inline-block;
 
   .blue & {
     @apply bg-blue text-white border-blue border-solid border-2 hover:bg-blue-dark hover:border-blue-dark;

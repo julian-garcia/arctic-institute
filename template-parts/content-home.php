@@ -1,5 +1,5 @@
 <div class="home-feature-image" 
-     style="background-image: url(<?php the_post_thumbnail_url() ?>">
+     style="background-image: url(<?php the_post_thumbnail_url() ?>)">
 </div>
 
 <?php if( $headline_article ): $post = get_post( $headline_article->ID ); setup_postdata( $post );  ?>
@@ -63,9 +63,9 @@
       <?php wp_reset_postdata(); ?>
     <?php endforeach; ?>
   </div>
-  <div class="text-center mt-5 p-3">
-    <a href="#" class="button blue block sm:inline-block">VIEW ALL PUBLICATIONS</a>
-    <a href="#" class="button clear block sm:inline-block">VIEW Upcoming Events</a>
+  <div class="text-center mt-5 p-3 flex justify-center gap-8">
+    <a href="#" class="button blue">VIEW ALL PUBLICATIONS</a>
+    <a href="#" class="button clear">VIEW Upcoming Events</a>
   </div>
 </div>
 

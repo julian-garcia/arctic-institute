@@ -27,11 +27,24 @@ module.exports = {
         alt1: '#F68A2D',
         alt2: '#E25E34',
         alt3: '#C5283D'
+      },
+      red: {
+        DEFAULT: '#C32339',
+        alt: '#C5283D'
       }
     }
   },
-  purge: [
-    './**/*.php',
-    './assets/src/**/*.js',
-  ]
+  // purge: [
+  //   './**/*.php',
+  //   './assets/src/**/*.js',
+  // ],
+  purge: {
+    content: [
+      './**/*.php',
+      './assets/src/**/*.js',  
+    ],
+    safelist: [
+      '-mt-20'
+    ]
+  },
 }

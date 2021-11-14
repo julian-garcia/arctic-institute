@@ -1,5 +1,5 @@
 .section {
-  @apply px-2 py-2 sm:px-0 md:py-12 relative;
+  @apply px-4 py-4 sm:px-0 md:py-12 relative;
 
   &.limit, .limit {
     @apply max-w-5xl mx-auto;
@@ -8,12 +8,22 @@
   &.dark {
     @apply bg-blue-dark;
 
+    &.curve-after {
+      @apply md:mb-20;
+    }
+
     &.curve-after::after {
       content: '';
       background-image: url('../images/curve.svg');
 
-      @apply absolute h-32 bg-no-repeat bg-cover md:-bottom-24 w-full left-0;
+      @apply absolute h-32 bg-no-repeat bg-cover md:mb-24 w-full left-0;
     }
+
+    p, h2, h3 {
+      @apply text-white font-sans mb-4;
+    }
+
+    p { @apply text-xl }
   }
 
   &.mid {
@@ -22,5 +32,38 @@
     .wp-block-columns {
       @apply max-w-5xl mx-auto;
     }
+
+    &.wp-block-columns {
+      @apply max-w-6xl mx-auto md:px-44 md:pt-16 md:pb-8;
+
+      & * {
+        @apply text-white font-sans mb-6;
+      }
+
+      p { @apply text-xl }
+    }
+
+    ol {
+      @apply ml-8 max-w-xl;
+
+      li {
+        counter-increment: step-counter;
+        @apply list-none list-outside relative pl-4 text-xl;
+
+        &::before {
+          content: counter(step-counter);
+          border-radius: 50%;
+          @apply border-solid border-white border absolute w-8 h-8 -left-8 top-1 font-serif text-center;
+        }
+      }
+    }
+  }
+
+  .wp-block-group__inner-container {
+    @apply max-w-3xl mx-auto;
+  }
+
+  &.leadership {
+    .wp-block-group__inner-container {@apply md:max-w-5xl;}
   }
 }

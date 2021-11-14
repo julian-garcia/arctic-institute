@@ -1,0 +1,73 @@
+.page-feature-image {
+  max-height: 400px;
+  @apply bg-center bg-no-repeat bg-cover w-full h-full relative;
+  
+  &::after {
+    content: '';
+    @apply bg-blue bg-opacity-50 absolute w-full h-full left-0 top-0 right-0 bottom-0;
+  }
+}
+
+.overview {
+  @apply my-12 font-serif text-2xl max-w-3xl mx-auto relative;
+
+  &:before {
+    content: '';
+    @apply h-full w-1 absolute -left-8 bg-red;
+  }
+}
+
+.vision {
+  @apply mx-auto max-w-5xl bg-white px-4 py-4 md:py-16 md:px-32 relative;
+
+  img { height: 112px; @apply w-auto mx-auto; }
+  figcaption { @apply text-center text-base text-blue font-semibold; }
+  p { @apply my-8; }
+  * { @apply font-sans; }
+
+  &.impact {
+    @apply pt-6;
+    .wp-block-image { @apply mb-0; }
+    img { height: unset; }
+    h2 { @apply text-blue text-3xl }
+  }
+}
+
+.polar-background {
+  background-image: url(../images/polar.jpg);
+
+  @apply bg-cover bg-no-repeat mb-0 pb-16;
+}
+
+.values, .leadership {
+  * { @apply font-sans; }
+  h2 { @apply text-3xl text-blue; }
+  p { @apply text-xl; }
+}
+
+.values {
+  @apply max-w-5xl mx-auto mt-8 md:mt-12 px-4 lg:px-0;
+  ul {
+    width: fit-content;
+    @apply ml-4 mt-4;
+    li {
+      @apply relative mb-4 font-serif text-xl cursor-pointer;
+      &.active {
+        @apply text-red-alt font-bold;
+      }
+      &::before {
+        content: '';
+        @apply absolute w-0.5 h-full -left-4 top-0 bg-black;
+      }
+      &:not(.active)::after {
+        content: '';
+        background-image: url(../images/arrow.svg);
+        @apply absolute w-6 h-5 -right-8 top-1 bg-no-repeat bg-contain;
+      }
+      &.active::before {
+        content: '';
+        @apply w-1 top-0 bg-red-alt;
+      }
+    }
+  }
+}

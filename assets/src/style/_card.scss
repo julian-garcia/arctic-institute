@@ -18,7 +18,7 @@
     }
 
     .link {
-      @apply absolute w-full h-full left-0 top-0;
+      @apply absolute w-full h-full left-0 top-0 text-blue-dark;
     }
 
     .tags {
@@ -26,15 +26,15 @@
     }
   
     .author {
-      @apply mb-6 relative text-lg;
+      @apply mb-6 relative text-lg text-blue-dark;
     }
   
     .date {
-      @apply text-base font-black relative;
+      @apply text-base font-black relative text-blue-dark;
     }
 
     .title {
-      @apply mt-2 font-black text-xl mb-1;
+      @apply mt-2 font-black text-xl mb-1 text-blue-dark;
     }
 
     .category {
