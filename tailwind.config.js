@@ -11,6 +11,10 @@ module.exports = {
         light: '#052537',
         DEFAULT: '#05507A',
         dark: '#032538',
+        project: '#002130'
+      },
+      grey: {
+        DEFAULT: '#E3E3E3',
       },
       white: {
         light: '#fff',
@@ -32,19 +36,21 @@ module.exports = {
         DEFAULT: '#C32339',
         alt: '#C5283D'
       }
-    }
+    },
+    extend: {
+      screens: {
+        'xs': '400px',
+        'md': '781px',
+      },
+    },
   },
-  // purge: [
-  //   './**/*.php',
-  //   './assets/src/**/*.js',
-  // ],
   purge: {
     content: [
       './**/*.php',
       './assets/src/**/*.js',  
     ],
     safelist: [
-      '-mt-20'
+      '-mt-20', '-ml-9', 'max-w-xl', 'max-w-3xl'
     ]
   },
 }

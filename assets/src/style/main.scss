@@ -20,7 +20,7 @@ h3 {
 }
 
 p {
-  @apply mb-3 font-sans text-black max-w-4xl text-current;
+  @apply mb-3 font-sans text-black max-w-4xl text-current text-xl;
 }
 
 a {
@@ -29,4 +29,8 @@ a {
 
 hr {
   @apply max-w-xs mx-auto my-8 border-b-0 border-t-2 border-blue-light;
+}
+
+.heading {
+  @apply text-3xl font-bold font-sans text-black mt-8;
 }
