@@ -2,6 +2,8 @@
   border-radius: 2px;
   @apply p-3 uppercase my-3 cursor-pointer block sm:inline-block;
 
+  &.no-margin { @apply my-0; }
+  
   &.blue {
     @apply bg-blue text-white border-blue border-solid border-2 hover:bg-blue-dark hover:border-blue-dark py-3.5;
   }

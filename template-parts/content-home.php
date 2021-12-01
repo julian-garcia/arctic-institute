@@ -22,7 +22,7 @@
       $cat = get_category( $c );
       echo '<a href="/category/' . $cat->slug . '">' . $cat->name . '</a>';
     } 
-    echo ' &bull; ' . get_the_date( 'M j, yy' );
+    echo ' &bull; ' . get_the_date( 'M j, Y' );
   ?></p>
 </div>
 <?php wp_reset_postdata(); ?>
@@ -43,7 +43,7 @@
         <div class="tags">
           <?php the_tags('<span>', ', </span> <span>','</span>'); ?>
         </div>
-        <p class="date"><?php echo get_the_date( 'M j, yy' ) ?></p>
+        <p class="date"><?php echo get_the_date( 'M j, Y' ) ?></p>
         <p class="title"><?php the_title(); ?></p>
         <p class="author font-bold">By: 
         <?php if ( function_exists( 'coauthors_posts_links' ) ) {

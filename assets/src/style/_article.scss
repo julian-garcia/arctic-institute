@@ -1,0 +1,99 @@
+.article {
+  @apply container max-w-6xl mx-auto -mt-8 relative bg-white px-10 py-8;
+
+  h1 {
+    @apply text-blue-dark font-bold;
+  }
+
+  .content {
+    @apply md:grid grid-cols-6 gap-16;
+  }
+
+  .the-article {
+    @apply col-span-4;
+
+    a {
+      @apply text-blue underline;
+    }
+
+    p {
+      @apply text-black-dark;
+    }
+
+    .back {
+      @apply text-blue no-underline relative block mb-8 ml-6;
+      &:before {
+        content: url('../images/paginate-prev.svg');
+        @apply absolute h-2 w-4 -left-6;
+      }
+    }
+    
+    .date {
+      @apply uppercase text-xl font-bold;
+    }
+
+    .meta {
+      @apply text-xl my-4;
+  
+      .categories {
+        @apply uppercase relative mr-8;
+  
+        a {
+          @apply text-blue-dark;
+        }
+  
+        &::after {
+          content: '';
+          border-radius: 50%;
+          @apply w-2 h-2 absolute bg-blue-dark ml-2 mt-2;
+        }
+      }
+    }
+  }
+
+  .sidebar {
+    @apply col-span-2;
+  }
+
+  .tags {
+    @apply my-4;
+
+    a {
+      @apply underline text-black;
+    }
+  }
+
+  .related {
+    @apply mt-8 md:mt-36;
+    h2 {
+      border-top-width: 3px;
+      @apply border-news-alt2 font-sans pt-4;
+    }
+
+    a {
+      @apply block my-4;
+    }
+
+    hr {
+      @apply w-full border-t border-grey;
+    }
+
+    .date, .more, .categories {
+      @apply text-base block uppercase;
+    }
+
+    .title {
+      @apply font-serif text-xl font-bold;
+    }
+
+    .author { @apply inline text-base; }
+
+    .more {
+      @apply relative text-blue font-bold;
+      &::after {
+        content: url(../images/paginate-right.svg);
+        @apply absolute w-6 h-2 ml-2;
+      }
+    }
+  }
+}

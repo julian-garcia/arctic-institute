@@ -30,7 +30,8 @@ module.exports = {
         DEFAULT: '#F6AE2D',
         alt1: '#F68A2D',
         alt2: '#E25E34',
-        alt3: '#C5283D'
+        alt3: '#C5283D',
+        alt4: '#F4AD3D'
       },
       red: {
         DEFAULT: '#C32339',

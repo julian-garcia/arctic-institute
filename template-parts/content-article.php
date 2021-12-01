@@ -1,11 +1,30 @@
-<?php the_post_thumbnail(); ?>
-<p class="author"><?php echo 'By'; ?> 
-  <?php if ( function_exists( 'coauthors_posts_links' ) ) {
-      coauthors_posts_links();
-  } else {
-      the_author_posts_link();
-  } ?>
-</p>
-<span><?php the_date() ?></span>
-<?php the_tags('<span>#', '</span> <span>#','</span>') ?>
-<?php the_content(); ?>
+<div class="the-article">
+  <a class="back" href="/publications">Back to Publications</a>
+  <h1 class="text-3xl"><?php wp_title(''); ?></h1>
+  <p class="meta"><?php echo 'By'; ?> 
+    <?php if ( function_exists( 'coauthors_posts_links' ) ) {
+        coauthors_posts_links();
+    } else {
+        the_author_posts_link();
+    } ?> 
+    <span class="mx-8">|</span>
+    <span class="categories">
+      <?php 
+        $post_terms = wp_get_object_terms( get_the_ID(), 'category', array( 'fields' => 'ids' ) );
+        wp_list_categories( array(
+          'title_li' => '',
+          'style'    => 'none',
+          'echo'     => true,
+          'taxonomy' => 'category',
+          'separator' => '',
+          'include'   => implode( ',' , $post_terms )
+      ) ); ?>
+    </span>
+    <span class="date"><?php the_date() ?></span>
+  </p>
+  <div class="tags">
+    <?php the_tags('', ', ','') ?>
+  </div>
+  <?php the_post_thumbnail(); ?>
+  <?php the_content(); ?>
+</div>

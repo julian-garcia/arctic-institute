@@ -33,6 +33,13 @@
       @apply max-w-5xl mx-auto;
     }
 
+    &.curve-before::before {
+      content: '';
+      background-image: url('../images/curve-blue.svg');
+
+      @apply absolute h-32 bg-no-repeat bg-cover w-full left-0 -top-28;
+    }
+
     &.wp-block-columns {
       @apply max-w-6xl mx-auto md:px-44 md:pt-16 md:pb-8;
 

@@ -1,0 +1,101 @@
+.filters {
+  @apply max-w-6xl my-8 block mx-auto px-4;
+
+  h2 {
+    @apply text-3xl text-blue font-sans;
+  }
+
+  h3 {
+    @apply text-xl text-blue font-sans;
+  }
+
+  select {
+    @apply border border-black border-solid p-4;
+  }
+}
+
+.publications {
+  @apply max-w-6xl mx-auto flex flex-wrap gap-8 my-8 px-4;
+  
+  & .publication-card {
+    flex-basis: 100%;
+    box-shadow: 0px 2px 8px 1px rgba(51,51,51,0.6);
+    @apply h-full relative;
+
+    >*:not(img):not(hr), .bg-white>*:not(img) {
+      @apply px-4 py-4 m-0;
+    }
+
+    .bg-white>a:first-child {
+      @apply p-0;
+    }
+
+    &.no-shadow {
+      box-shadow: none;
+    }
+
+    &>a:first-of-type {
+      @apply p-0 block;
+    }
+
+    .tags > span {
+      @apply text-blue text-base uppercase font-bold;
+    }
+
+    .date, .author { @apply text-base; }
+    .title { @apply block font-serif text-xl; }
+
+    hr {
+      max-width: 200px;
+      @apply p-0 mt-0 mb-6 mx-auto block;
+    }
+
+    @screen sm {
+      flex-basis: calc(50% - 18px);
+    }
+  
+    @screen lg {
+      flex-basis: calc(33% - 18px);
+    }
+  }
+}
+
+.pagination {
+  @apply max-w-6xl mx-auto text-center my-8 h-12;
+
+  .page-numbers {
+    @apply font-serif text-xl text-blue px-4;
+
+    &.prev, &.next {
+      @apply relative;
+      &::before {
+        @apply absolute w-6 h-2;
+      }
+    }
+    &.prev {
+      &::before {
+        content: url(../images/paginate-prev.svg);
+        @apply left-0;
+      }
+    }
+    &.next {
+      &::before {
+        content: url(../images/paginate-right.svg);
+        @apply right-0;
+      }
+    }
+    &.current {
+      @apply text-white relative mx-4 p-0;
+
+      &::before {
+        content: '';
+        border-radius: 50%;
+        z-index: -1;
+        @apply bg-blue w-10 h-10 -mt-1.5 mx-0 absolute -left-3.5 top-0;
+      }
+    }
+    &.dots {
+      @apply mx-0;
+    }
+  }
+}

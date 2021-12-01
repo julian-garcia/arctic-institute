@@ -4,7 +4,7 @@
   
   &::after {
     content: '';
-    @apply bg-blue bg-opacity-50 absolute w-full h-full left-0 top-0 right-0 bottom-0;
+    @apply bg-blue bg-opacity-60 absolute w-full h-full left-0 top-0 right-0 bottom-0;
   }
 }
 
@@ -213,6 +213,6 @@
 .impact {
   @apply max-w-5xl mx-auto my-16 text-center;
 
-  h3 { @apply text-7xl text-blue; }
+  h3 { @apply text-3xl text-blue; }
   p { max-width: 220px; @apply text-2xl font-bold mx-auto mt-4; }
 }
