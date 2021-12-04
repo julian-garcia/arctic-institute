@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   theme: {
     fontFamily: {
@@ -40,9 +42,12 @@ module.exports = {
     },
     extend: {
       screens: {
-        'xs': '400px',
         'md': '781px',
       },
+    },
+    screens: {
+      'xs': '400px',
+      ...defaultTheme.screens,
     },
   },
   purge: {

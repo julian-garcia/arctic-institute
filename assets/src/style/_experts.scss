@@ -1,0 +1,20 @@
+.experts {
+  @apply max-w-5xl mx-auto -mt-12 relative bg-white p-8;
+
+  .expert-grid {
+    @apply grid grid-cols-1 gap-4 xs:grid-cols-2 sm:grid-cols-2 sm:gap-10 md:grid-cols-3 md:gap-10 lg:grid-cols-4 lg:gap-12;
+
+    .wp-block-image {
+      max-width: 230px;
+      @apply my-0 mx-auto;
+    }
+  }
+
+  h1 {
+    @apply mb-12 text-4xl;
+  }
+
+  figcaption, a {
+    @apply text-center text-base text-blue mb-0;
+  }
+}

@@ -119,13 +119,23 @@
         $heading = $post_2['heading']; 
         $hr_class = "border-news-alt2";
       } 
-      if ($i === 3 && $post_3) { 
-        $post = get_post( $post_3['post']->ID ); 
+      if ($i === 3 && $post_3) {
+        if ($post_3['post']) {
+          $post = get_post( $post_3['post']->ID ); 
+        } else {
+          $random_post = new WP_Query(array( 
+            'post_type'      => 'post', 
+            'orderby'        => 'rand',
+            'posts_per_page' => '1',
+          ));
+          $random_post->the_post();
+          $post = get_post($random_post->the_ID());
+        }
         $heading = $post_3['heading']; 
         $hr_class = "border-news-alt3";
       }
     ?>
-    <?php if( $post ): setup_postdata( $post );  ?>
+    <?php if( $post ): setup_postdata( $post ); $cats = get_the_category();  ?>
     <div class="publication-card no-shadow">
       <h3 class="text-white text-center lg:h-24 font-sans"><?php echo $heading ?></h3>
       <hr class="<?php echo $hr_class; ?>">
