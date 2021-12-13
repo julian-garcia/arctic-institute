@@ -1,5 +1,5 @@
 .section {
-  @apply px-4 py-4 sm:px-0 md:py-12 relative;
+  @apply px-4 py-4 md:py-12 relative;
 
   &.limit, .limit {
     @apply max-w-5xl mx-auto;
@@ -48,21 +48,6 @@
       }
 
       p { @apply text-xl }
-    }
-
-    ol {
-      @apply ml-8 max-w-xl;
-
-      li {
-        counter-increment: step-counter;
-        @apply list-none list-outside relative pl-4 text-xl;
-
-        &::before {
-          content: counter(step-counter);
-          border-radius: 50%;
-          @apply border-solid border-white border absolute w-8 h-8 -left-8 top-1 font-serif text-center;
-        }
-      }
     }
   }
 

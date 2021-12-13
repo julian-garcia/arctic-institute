@@ -1,0 +1,42 @@
+.numbered-list {
+  @apply ml-8 max-w-xl;
+
+  li {
+    counter-increment: step-counter;
+    @apply list-none list-outside relative pl-4 text-xl;
+
+    &::before {
+      content: counter(step-counter);
+      border-radius: 50%;
+      @apply border-solid border absolute w-8 h-8 -left-8 top-1 font-serif text-center;
+    }
+    
+  }
+
+  &.light {
+    li {
+      &::before {
+        @apply border-white;
+      }
+    }
+  }
+
+  &.dark {
+    @apply text-blue-dark;
+    li {
+      &::before {
+        @apply border-blue-dark;
+      }
+    }
+  }
+
+  &.alternate-width {
+    @apply max-w-3xl mx-auto;
+    li {
+      @apply pl-12 my-4 max-w-2xl;
+      &::before {
+        @apply left-0;
+      }
+    }
+  }
+}

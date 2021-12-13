@@ -56,7 +56,7 @@ module.exports = {
       './assets/src/**/*.js',  
     ],
     safelist: [
-      '-mt-20', '-ml-9', 'max-w-xl', 'max-w-3xl'
+      '-mt-20', '-mt-14', '-ml-9', 'max-w-xl', 'max-w-3xl', 'my-8'
     ]
   },
 }

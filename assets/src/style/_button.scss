@@ -1,6 +1,6 @@
 .button {
   border-radius: 2px;
-  @apply p-3 uppercase my-3 cursor-pointer block sm:inline-block;
+  @apply p-3 uppercase my-3 cursor-pointer block sm:inline-block no-underline;
 
   &.no-margin { @apply my-0; }
   
@@ -20,20 +20,24 @@
 .wp-block-buttons { 
   @apply gap-8;
   .wp-block-button.wp-block-button {
-    @apply mx-auto;
+      @apply mx-auto;
+      &.left {
+        @apply ml-0;
+      }
   }
 }
 
-.wp-block-button__link {
+.wp-block-button__link.wp-block-button__link {
   border-radius: 2px;
-  @apply p-3 my-3 uppercase cursor-pointer block sm:inline-block;
+  @apply p-3 my-3 uppercase cursor-pointer block sm:inline-block no-underline;
 
-  .blue & {
+  .wp-block-button.blue & {
     @apply bg-blue text-white border-blue border-solid border-2 hover:bg-blue-dark hover:border-blue-dark;
   }
 
-  .outline & {
+  .wp-block-button.outline & {
     @apply bg-transparent text-blue border-blue border-solid border-2 hover:bg-blue 
     hover:border-blue hover:text-white;
   }
 }
+

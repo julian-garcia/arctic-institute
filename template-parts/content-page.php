@@ -5,7 +5,10 @@
        <p class="text-2xl text-white max-w-md mt-3"><?php echo $headline ?></p>
      </div>
 </div>
-
-<div class="">
+<?php if($fullwidth && in_array('no', $fullwidth)): ?> 
+  <div class="max-w-5xl md:mx-auto my-8 mx-4"> 
+<?php else: ?>
+  <div class="my-8">
+<?php endif; ?>
   <?php the_content(); ?>
 </div>

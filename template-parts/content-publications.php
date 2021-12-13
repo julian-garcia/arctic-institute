@@ -13,7 +13,7 @@
       <select name="topic">
         <option value="" disabled <?php echo $_POST['topic'] ? "" : "selected" ?>>Filter by topic</option>
         <option value="">All</option>
-        <?php 
+        <?php  
         $cats = get_tags();
         foreach($cats as $c) : ?>
         <option 
@@ -114,15 +114,30 @@
         $heading = $post_1['heading']; 
         $hr_class = "border-news-alt4";
       } 
-      if ($i === 2 && $post_2) { 
-        $post = get_post( $post_2['post']->ID ); 
-        $heading = $post_2['heading']; 
+      if ($i === 2) {
+        $today = getdate(strtotime(date("Y-m-d"). ' - 5 years 1 day'));
+        $old_post = new WP_Query(array( 
+            'post_type'      => 'post', 
+            'order'          => 'asc',
+            'tag'            => $post_2['tag']->slug,
+            'date_query'     => array(
+                array(
+                    'after' => array(
+                      'year'  => $today['year'],
+                      'month' => $today['mon'],
+                      'day'   => $today['mday'],
+                    ),
+                ),
+            ),
+            'posts_per_page' => '1',
+          ));
+        $old_post->the_post();
+        $post = get_post($old_post->the_ID());
+        $heading = $post_2['heading'] . ' ' . $post_2['tag']->name; 
         $hr_class = "border-news-alt2";
       } 
-      if ($i === 3 && $post_3) {
-        if ($post_3['post']) {
-          $post = get_post( $post_3['post']->ID ); 
-        } else {
+      if ($i === 3) {
+        if ( false === ( $post = get_transient( 'random_post' ) ) ) {
           $random_post = new WP_Query(array( 
             'post_type'      => 'post', 
             'orderby'        => 'rand',
@@ -130,6 +145,7 @@
           ));
           $random_post->the_post();
           $post = get_post($random_post->the_ID());
+          set_transient( 'random_post', $post, DAY_IN_SECONDS );
         }
         $heading = $post_3['heading']; 
         $hr_class = "border-news-alt3";

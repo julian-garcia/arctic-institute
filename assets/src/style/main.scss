@@ -6,6 +6,7 @@
 @import './publications';
 @import './experts';
 @import './card';
+@import './list';
 @import './button';
 @import './footer';
 
@@ -14,16 +15,20 @@
   @apply md:pr-4;
 }
 
+h1 {
+  @apply text-blue-dark;
+}
+
 h2 {
-  @apply text-2xl font-bold font-serif text-black mb-4;
+  @apply text-2xl font-bold font-serif text-blue-dark mb-4;
 }
 
 h3 {
-  @apply text-xl font-bold font-serif text-black;
+  @apply text-xl font-bold font-serif text-blue-dark;
 }
 
 p {
-  @apply mb-3 font-sans text-black max-w-4xl text-current text-xl;
+  @apply mb-3 font-sans text-blue-dark max-w-4xl text-current text-xl;
 }
 
 a {
@@ -35,5 +40,5 @@ hr {
 }
 
 .heading {
-  @apply text-3xl font-bold font-sans text-black mt-8;
+  @apply text-3xl font-bold font-sans text-blue-dark mt-8;
 }
