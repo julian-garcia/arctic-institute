@@ -9,7 +9,7 @@ function config_theme_support() {
 function enqueue_styles() {
   $version = wp_get_theme()->get('Version');
   wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/assets/dist/main.css', array(), '2.2.16', 'all' );
-  wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css2?family=PT+Serif&family=Raleway&display=swap">', array(), '', 'all' );
+  wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css2?family=PT+Serif&display=swap">', array(), '', 'all' );
   wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css', array('main'), $version, 'all' );
 }
 

@@ -22,11 +22,12 @@
     }
 
     .tags {
-      @apply text-blue uppercase text-lg font-black mb-4 mt-4 relative;
+      @apply text-blue uppercase text-base font-black mb-4 mt-4 relative;
+      line-height: 23px;
     }
   
     .author {
-      @apply mb-6 relative text-lg text-blue-dark;
+      @apply mb-6 relative text-base text-blue-dark;
     }
   
     .date {
@@ -34,13 +35,27 @@
     }
 
     .title {
-      @apply mt-2 font-black text-xl mb-1 text-blue-dark;
+      @apply mt-2 font-serif text-xl font-bold mb-1 text-blue-dark;
     }
 
-    .category {
+    .category, .categories {
       @apply uppercase text-sm font-bold relative text-blue;
     }
   }
+}
+
+.category, .categories {
+  a[href^="/category/"] {
+    @apply ml-8 uppercase text-sm font-bold relative text-blue;
+    &::before {
+      content: url(../images/categories/article.svg);;
+      @apply absolute h-6 w-6 -left-8 -top-0.5;
+    }
+  }
+
+  a[href*="multimedia"]::before { content: url(../images/categories/multimedia.svg); }
+  a[href*="commentary"]::before { content: url(../images/categories/commentary.svg); }
+  a[href*="take-five"]::before { content: url(../images/categories/take-five.svg); }
 }
 
 .news-card {
@@ -51,7 +66,7 @@
   }
 
   p:nth-of-type(1) {
-    @apply flex-grow;
+    @apply flex-grow text-lg;
   }
 
   h2 {
@@ -59,43 +74,17 @@
   }
 
   a {
-    @apply text-blue uppercase font-sans font-black relative;
+    @apply text-blue uppercase font-sans font-black text-base relative;
 
     &::after {
       content: '';
-      background-image: url(../images/right-arrow.svg);
+      background-image: url(../images/arrow-link.svg);
       width: 20px;
-      height: 20px;
+      height: 14px;
+      top: 50%;
+      transform: translateY(-50%);
 
       @apply absolute bg-no-repeat bg-contain -right-6 text-blue;
-    }
-  }
-
-  .section>.wp-block-columns:nth-child(odd) & {
-    &:nth-child(1) {
-      h3:first-of-type {
-        @apply bg-news;
-      }
-    }
-  
-    &:nth-child(2) {
-      h3:first-of-type {
-        @apply bg-news-alt1;
-      }
-    }
-  }
-
-  .section>.wp-block-columns:nth-child(even) & {
-    &:nth-child(1) {
-      h3:first-of-type {
-        @apply bg-news-alt2;
-      }
-    }
-  
-    &:nth-child(2) {
-      h3:first-of-type {
-        @apply bg-news-alt3;
-      }
     }
   }
 }

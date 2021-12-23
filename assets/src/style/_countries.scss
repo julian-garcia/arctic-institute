@@ -1,0 +1,90 @@
+.flag-icon {
+  background-position: 50%;
+  width: 110px;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  @apply inline-block absolute bg-no-repeat bg-contain top-1/2 left-1/2;
+
+  &.multiple {
+    &:nth-child(1) { background-position: center 10%; }
+    &:nth-child(2) { background-position: center center; }
+    &:nth-child(3) { background-position: center 90%; }
+    width: 60px;
+    height: 100%;
+  }
+
+  &.ca { background-image: url(../images/flags/ca.svg); }
+  &.cn { background-image: url(../images/flags/cn.svg); }
+  &.dk { background-image: url(../images/flags/dk.svg); }
+  &.de { background-image: url(../images/flags/de.svg); }
+  &.es { background-image: url(../images/flags/es.svg); }
+  &.eu { background-image: url(../images/flags/eu.svg); }
+  &.fo { background-image: url(../images/flags/fo.svg); }
+  &.fi { background-image: url(../images/flags/fi.svg); }
+  &.fr { background-image: url(../images/flags/fr.svg); }
+  &.gb { background-image: url(../images/flags/gb.svg); }
+  &.gl { background-image: url(../images/flags/gl.svg); }
+  &.is { background-image: url(../images/flags/is.svg); }
+  &.in { background-image: url(../images/flags/in.svg); }
+  &.it { background-image: url(../images/flags/it.svg); }
+  &.jp { background-image: url(../images/flags/jp.svg); }
+  &.kr { background-image: url(../images/flags/kr.svg); }
+  &.nl { background-image: url(../images/flags/nl.svg); }
+  &.no { background-image: url(../images/flags/no.svg); }
+  &.pl { background-image: url(../images/flags/pl.svg); }
+  &.ru { background-image: url(../images/flags/ru.svg); }
+  &.sg { background-image: url(../images/flags/sg.svg); }
+  &.se { background-image: url(../images/flags/se.svg); }
+  &.us { background-image: url(../images/flags/us.svg); }
+}
+
+.countries-grid {
+  @apply my-16;
+
+  .wp-block-group__inner-container {
+    @apply grid grid-cols-1 gap-x-8 gap-y-16 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 max-w-4xl lg:mx-auto mx-0;
+  }
+}
+
+.country {
+  border-radius: 50%;
+  width: 195px;
+  height: 195px;
+  @apply border bg-grey border-grey-dark relative mx-auto;
+
+  p {
+    @apply absolute w-full h-full text-blue left-0;
+  }
+
+  a {
+    padding-top: 205px;
+    @apply absolute top-0 w-full text-center;
+  }
+}
+
+.country-feature { min-height: 400px; }
+
+.country-details {
+  @apply -mt-36 relative;
+
+  h1 {
+    min-width: 400px;
+    @apply text-white bg-news p-4 inline-block font-bold;
+  }
+
+  .stats {
+    @apply bg-grey-light px-16 py-8 border-t-4 border-news grid grid-cols-2;
+    .heading { @apply text-blue mt-0; }
+
+    p {
+      @apply text-xl;
+    }
+
+    h3 { @apply font-sans mb-2; }
+
+    hr {
+      max-width: 100px;
+      @apply border-t-2 mx-0 my-4 border-red;
+    }
+  }
+}

@@ -1,4 +1,6 @@
 .nav-menu {
+  @apply relative;
+
   a {
     text-decoration: none;
     text-transform: uppercase;
@@ -7,5 +9,29 @@
   
   .sub-menu {
     @apply hidden;
+  }
+
+  .search {
+    @apply absolute text-blue-dark right-2 top-0 cursor-pointer z-10 text-xl;
+    &.white { @apply text-white; }
+  }
+
+  .searchform {
+    @apply hidden absolute right-10 -top-2 z-10;
+
+    &.show {
+      @apply block;
+    }
+
+    input[type="text"] {
+      @apply text-blue-dark h-8 p-1.5 w-40 border-2;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    input[type="submit"] {
+      @apply hidden;
+    }
   }
 }

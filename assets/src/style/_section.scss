@@ -59,3 +59,39 @@
     .wp-block-group__inner-container {@apply md:max-w-5xl;}
   }
 }
+
+.alternating-cols {
+  > * { min-height: 280px; @apply p-6 relative; }
+
+  h2, p { @apply text-white; }
+  p { @apply mb-16; }
+
+  hr { @apply border-white mx-0 my-4; }
+
+  a {
+    max-width: 100%;
+    @apply text-news uppercase absolute bottom-6 pr-4;
+
+    @screen sm { max-width: 250px; }
+    @screen md { max-width: 100%; }
+
+    &::after {
+      content: '';
+      background-image: url(../images/arrow-alt.svg);
+      width: 20px;
+      height: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @apply absolute bg-no-repeat bg-contain ml-4;
+    }
+  }
+
+  .mid {
+    @apply bg-blue;
+  }
+
+  .dark {
+    @apply bg-blue-dark;
+  }
+}

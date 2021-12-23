@@ -6,6 +6,10 @@
     content: '';
     @apply bg-blue bg-opacity-60 absolute w-full h-full left-0 top-0 right-0 bottom-0;
   }
+
+  &.country-feature {
+    &::after { content: none; }
+  }
 }
 
 .content {
@@ -15,11 +19,11 @@
 }
 
 .overview {
-  @apply my-12 font-serif text-2xl max-w-3xl mx-auto relative px-4 md:px-0;
+  @apply my-24 font-serif font-bold text-2xl max-w-3xl mx-auto relative px-4 lg:px-0;
 
   &:before {
     content: '';
-    @apply h-full w-1 absolute left-0 md:-left-8 bg-red;
+    @apply h-full w-1 absolute left-0 lg:-left-8 bg-red;
   }
 }
 
@@ -37,6 +41,65 @@
     img { height: unset; }
     h2 { @apply text-blue text-3xl }
   }
+
+  .wp-block-column {
+    background-size: auto 110px;
+    min-height: 140px;
+    transition: all .5s ease-in-out;
+    @apply bg-no-repeat bg-top cursor-pointer relative;
+
+    &:hover {
+      a {
+        @apply text-red-alt;
+      }
+    }
+
+    a {
+      padding-top: 114px;
+      transition: color .5s ease-in-out;
+      @apply absolute h-full w-full left-0 top-0 text-blue;
+    }
+  }
+
+  .vision-military {
+    background-image: url(../images/vision-military.svg);
+    &:hover { background-image: url(../images/vision-military-active.svg); }
+  }
+
+  .vision-economic {
+    background-image: url(../images/vision-economic.svg);
+    &:hover { background-image: url(../images/vision-economic-active.svg); }
+  }
+
+  .vision-food {
+    background-image: url(../images/vision-food.svg);
+    &:hover { background-image: url(../images/vision-food-active.svg); }
+  }
+
+  .vision-health {
+    background-image: url(../images/vision-health.svg);
+    &:hover { background-image: url(../images/vision-health-active.svg); }
+  }
+
+  .vision-environment {
+    background-image: url(../images/vision-environment.svg);
+    &:hover { background-image: url(../images/vision-environment-active.svg); }
+  }
+
+  .vision-cultural {
+    background-image: url(../images/vision-cultural.svg);
+    &:hover { background-image: url(../images/vision-cultural-active.svg); }
+  }
+
+  .vision-political {
+    background-image: url(../images/vision-political.svg);
+    &:hover { background-image: url(../images/vision-political-active.svg); }
+  }
+
+  .vision-energy {
+    background-image: url(../images/vision-energy.svg);
+    &:hover { background-image: url(../images/vision-energy-active.svg); }
+  }
 }
 
 .polar-background {
@@ -52,7 +115,7 @@
 }
 
 .values {
-  @apply max-w-5xl mx-auto mt-8 md:mt-12 px-4 lg:px-0;
+  @apply max-w-5xl mx-auto my-8 md:my-20 md:px-4 lg:px-0 md:flex block;
   ul {
     width: fit-content;
     @apply ml-4 mt-4;
@@ -68,13 +131,16 @@
       &:not(.active)::after {
         content: '';
         background-image: url(../images/arrow.svg);
-        @apply absolute w-6 h-5 -right-8 top-1 bg-no-repeat bg-contain;
+        @apply absolute w-6 h-5 ml-4 top-1 bg-no-repeat bg-contain;
       }
       &.active::before {
         content: '';
         @apply w-1 top-0 bg-red-alt;
       }
     }
+  }
+  >.wp-block-column {
+    margin-left: 0;
   }
 }
 
@@ -224,12 +290,16 @@
 }
 
 .impact {
-  @apply max-w-5xl mx-auto mb-16 text-center;
+  @apply max-w-5xl mx-auto mb-0 text-center;
 
-  h3 { @apply text-3xl text-blue; }
+  h3 { @apply text-6xl text-blue font-bold; }
   p { max-width: 220px; @apply text-2xl font-bold mx-auto mt-4; }
 }
 
 .highlight {
-  @apply border-l-4 border-red border-solid pl-4 max-w-3xl mx-auto my-16 text-2xl;
+  @apply border-l-4 border-red border-solid pl-4 max-w-3xl mx-auto my-16 text-2xl font-bold font-serif;
+}
+
+.sub-highlight {
+  @apply pl-4 max-w-3xl mx-auto my-16 text-xl;
 }

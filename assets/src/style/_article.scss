@@ -29,17 +29,24 @@
     }
     
     .date {
-      @apply uppercase text-xl font-bold;
+      @apply uppercase text-lg font-bold;
     }
 
     .meta {
-      @apply text-xl my-4;
+      @apply text-lg my-4 flex items-center justify-start;
   
+      .authors {
+        max-width: 200px;
+      }
+
       .categories {
         @apply uppercase relative mr-8;
   
         a {
           @apply text-blue-dark;
+          &::before {
+            content: none;
+          }
         }
   
         &::after {

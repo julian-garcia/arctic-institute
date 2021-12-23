@@ -64,11 +64,11 @@
     <?php endforeach; ?>
   </div>
   <div class="text-center mt-5 p-3 flex justify-center gap-8">
-    <a href="#" class="button blue">VIEW ALL PUBLICATIONS</a>
+    <a href="/publications" class="button blue">VIEW ALL PUBLICATIONS</a>
     <a href="#" class="button clear">VIEW Upcoming Events</a>
   </div>
 </div>
 
-<div class="section mt-28 md:mt-14 pt-28 pb-10 bg-white">
+<div class="section mt-28 md:mt-14 -mx-4 pt-28 pb-10 bg-white">
   <?php the_content(); ?>
 </div>

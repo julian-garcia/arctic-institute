@@ -3,7 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   theme: {
     fontFamily: {
-      sans: ['Raleway', 'sans-serif'],
+      sans: ['Proxima', 'sans-serif'],
       serif: ['PT Serif', 'serif'],
     },
     colors: {
@@ -16,7 +16,9 @@ module.exports = {
         project: '#002130'
       },
       grey: {
+        light: '#f7f7f7',
         DEFAULT: '#E3E3E3',
+        dark: '#707070'
       },
       white: {
         light: '#fff',
@@ -44,6 +46,15 @@ module.exports = {
       screens: {
         'md': '781px',
       },
+      fontSize: {
+        'alt-sm': '15px',
+        'alt': '17px',
+        'lg': '20px',
+        'xl': '21px',
+        '2xl': '25px',
+        '4xl': '35px',
+        '5xl': '45px',
+      },
     },
     screens: {
       'xs': '400px',
@@ -56,7 +67,9 @@ module.exports = {
       './assets/src/**/*.js',  
     ],
     safelist: [
-      '-mt-20', '-mt-14', '-ml-9', 'max-w-xl', 'max-w-3xl', 'my-8'
+      '-mt-20', '-ml-8', 'mt-16', '-mt-20', '-mt-14', 'mt-12', 'mb-12', '-ml-9',
+      'max-w-xl', 'max-w-3xl', 'my-8', 'md:-mt-20',
+      'bg-news', 'bg-news-alt1', 'bg-news-alt2', 'bg-news-alt3'
     ]
   },
 }

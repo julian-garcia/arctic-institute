@@ -1,23 +1,38 @@
-footer {  
-  p, h2 {
-    @apply text-white font-sans;
-  }
-
-  a {
-    @apply text-news uppercase relative;
-
-    &::after {
-      content: '';
-      background-image: url(../images/right-arrow-alt.svg);
-      width: 20px;
-      height: 20px;
-      @apply absolute bg-no-repeat bg-contain -right-6 top-0;
+.footer {  
+  .copyright {
+    p { @apply mx-auto mb-0; }
+    a {
+      @apply text-black inline-block mx-2 text-lg mt-4;
+      &::after {
+        background-image: none;
+      }
     }
   }
 
   .footer-col {
     min-width: 200px;
     @apply flex-1 flex flex-col;
+
+    h2 { @apply text-xl; }
+    p { @apply text-alt; }
+    p, h2 {
+      @apply text-white font-sans;
+    }
+
+    a {
+      @apply text-news uppercase relative text-alt-sm;
+
+      &::after {
+        content: '';
+        background-image: url(../images/arrow-alt.svg);
+        width: 20px;
+        height: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @apply absolute bg-no-repeat bg-contain -right-6;
+      }
+    }
 
     & > p:first-of-type {
       @apply flex-grow;

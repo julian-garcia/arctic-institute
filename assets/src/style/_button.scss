@@ -1,6 +1,6 @@
 .button {
   border-radius: 2px;
-  @apply p-3 uppercase my-3 cursor-pointer block sm:inline-block no-underline;
+  @apply p-3 uppercase my-3 cursor-pointer block sm:inline-block no-underline text-base;
 
   &.no-margin { @apply my-0; }
   
@@ -13,7 +13,7 @@
       @apply py-3.5;
     }
     @apply bg-transparent text-white border-white border-solid border-2 hover:bg-blue 
-    hover:border-blue;
+    hover:border-blue py-3.5;
   }
 }
 
@@ -25,11 +25,17 @@
         @apply ml-0;
       }
   }
+  &.button-pair {
+    @apply mb-6 gap-8 mx-auto;
+    .wp-block-button {
+      // @apply mx-0;
+    }
+  }
 }
 
 .wp-block-button__link.wp-block-button__link {
   border-radius: 2px;
-  @apply p-3 my-3 uppercase cursor-pointer block sm:inline-block no-underline;
+  @apply p-3 my-3 text-base uppercase cursor-pointer block sm:inline-block no-underline;
 
   .wp-block-button.blue & {
     @apply bg-blue text-white border-blue border-solid border-2 hover:bg-blue-dark hover:border-blue-dark;
@@ -40,4 +46,3 @@
     hover:border-blue hover:text-white;
   }
 }
-

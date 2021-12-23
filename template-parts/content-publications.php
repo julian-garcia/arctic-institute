@@ -1,9 +1,9 @@
 <div class="page-feature-image"
      style="background-image: url(<?php the_post_thumbnail_url() ?>)">
-     <div class="mx-auto max-w-5xl py-28 z-10 relative px-4 lg:px-0">
-       <h1 class="text-4xl text-white"><?php wp_title(''); ?></h1>
-       <p class="text-2xl text-white max-w-3xl mt-3"><?php echo $headline ?></p>
-     </div>
+  <div class="mx-auto max-w-5xl py-28 z-10 relative px-4 lg:px-0">
+    <h1 class="text-4xl text-white"><?php wp_title(''); ?></h1>
+    <p class="text-2xl text-white max-w-3xl mt-3"><?php echo $headline ?></p>
+  </div>
 </div>
 <form action="/publications" method="post" class="filters">
   <h2>Filter By</h2>
@@ -41,7 +41,7 @@
     <input type="submit" name="submit" value="Apply Filters" class="button blue no-margin" />
   </div>
 </form>
-<div class="publications">
+<div class="publications masonry">
   <?php
     $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
@@ -63,7 +63,7 @@
 
     if($post_query->have_posts() ) : 
       while($post_query->have_posts() ) : $post_query->the_post(); $cats = get_the_category(); ?>
-        <div class="publication-card">
+        <div class="publication-card card">
           <a href="<?php the_permalink() ?>">
             <img src=<?php the_post_thumbnail_url('medium') ?> alt="" class="w-full">
           </a>

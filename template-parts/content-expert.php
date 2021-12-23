@@ -39,4 +39,23 @@
   <div class="my-8"> 
     <?php the_content(); ?>
   </div>
+  <div>
+    <?php
+      $post_query = new WP_Query(array( 
+        'post_type' => 'post', 
+        'author' => $author,
+      ));
+    ?>
+    <?php if ( $post_query->have_posts() ) : ?>
+      <hr>
+      <?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
+        <div class="mb-4">
+          <a href="<?php the_permalink() ?>" class="text-xl mb-0"><?php the_title(); ?></a>
+          <p class="m-0"><?php echo get_the_excerpt(); ?></p>
+          <p class="m-0"><?php the_date('F j, Y'); ?></p>
+        </div>
+      <?php endwhile; ?>
+      <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
+  </div>
 </div>
