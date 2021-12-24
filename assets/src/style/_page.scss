@@ -19,7 +19,7 @@
 }
 
 .overview {
-  @apply my-24 font-serif font-bold text-2xl max-w-3xl mx-auto relative px-4 lg:px-0;
+  @apply my-16 font-serif font-bold text-2xl max-w-3xl mx-auto relative px-4 lg:px-0;
 
   &:before {
     content: '';
@@ -172,10 +172,10 @@
     
       &::after {
         content: '';
-        background-image: url(../images/right-arrow-alt.svg);
+        background-image: url(../images/arrow-alt.svg);
         width: 20px;
         height: 20px;
-        @apply absolute bg-no-repeat bg-contain -right-6 top-1;
+        @apply absolute bg-no-repeat bg-contain -right-6 top-1.5;
       }
     }
 
@@ -257,6 +257,12 @@
 
     figure {
       @apply my-0;
+    }
+
+    .smaller {
+      img {
+        padding-bottom: 20px;
+      }
     }
 
     img {

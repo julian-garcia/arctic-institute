@@ -20,6 +20,10 @@
       @apply text-black-dark;
     }
 
+    h2 {
+      @apply leading-tight mt-12 text-2xl;
+    }
+
     .back {
       @apply text-blue no-underline relative block mb-8 ml-6;
       &:before {

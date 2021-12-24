@@ -28,7 +28,7 @@
   &.button-pair {
     @apply mb-6 gap-8 mx-auto;
     .wp-block-button {
-      // @apply mx-0;
+      @apply mx-0;
     }
   }
 }

@@ -44,9 +44,18 @@ a {
 
 hr, .wp-block-separator {
   @apply max-w-xs mx-auto my-8 border-b-0 border-t-2 border-blue-light;
+  &.white { @apply border-white; }
 }
 
 .heading {
-  @apply text-3xl font-bold font-sans text-blue-dark mt-8;
+  @apply text-4xl font-bold font-sans text-blue-dark mt-8 mb-4;
   &.white { @apply text-white; }
+}
+
+h2.heading {
+  @apply text-4xl ;
+}
+
+h3.heading {
+  @apply text-2xl font-semibold;
 }

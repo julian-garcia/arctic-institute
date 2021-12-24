@@ -5,17 +5,30 @@
     @apply text-3xl text-blue font-sans;
   }
 
-  h3 {
+  h3, label {
     @apply text-xl text-blue font-sans;
   }
 
   select {
-    @apply border border-black border-solid p-4;
+    @apply leading-none border border-grey-dark border-solid outline-none appearance-none cursor-pointer p-2.5 bg-white w-full h-full text-black;
+  }
+
+  .select {
+    border-radius: .25em;
+    @apply pb-2.5 overflow-hidden block relative;
+
+    svg {
+      @apply absolute right-4 top-1/2 pointer-events-none -translate-y-1/2;
+    }
   }
 }
 
 .publications {
   @apply max-w-6xl mx-auto flex flex-wrap gap-8 my-24 px-4;
+
+  &.less-spacing {
+    @apply mt-8;
+  }
   
   & .publication-card {
     flex-basis: 100%;
@@ -48,6 +61,10 @@
     hr {
       max-width: 200px;
       @apply p-0 mt-0 mb-6 mx-auto block;
+    }
+
+    .archive-heading {
+      @apply text-white text-center lg:h-24 font-sans;
     }
 
     @screen sm {

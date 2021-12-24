@@ -1,6 +1,6 @@
 <div class="the-article">
   <a class="back" href="/publications">Back to Publications</a>
-  <h1 class="text-3xl"><?php wp_title(''); ?></h1>
+  <h1 class="leading-tight text-4xl"><?php wp_title(''); ?></h1>
   <p class="meta">
     <span class="authors">
     <?php echo 'By'; ?> 
