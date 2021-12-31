@@ -70,7 +70,7 @@ module.exports = {
       './assets/src/**/*.js',  
     ],
     safelist: [
-      '-mt-20', '-ml-8', 'mt-16', '-mt-20', '-mt-14', 'mt-12', 'mb-12', '-ml-9',
+      '-mt-20', '-ml-8', '-mt-8', 'mt-16', '-mt-20', '-mt-14', 'mt-12', 'mb-12', '-ml-9',
       'max-w-xl', 'max-w-3xl', 'my-8', 'md:-mt-20',
       'bg-news', 'bg-news-alt1', 'bg-news-alt2', 'bg-news-alt3'
     ]
