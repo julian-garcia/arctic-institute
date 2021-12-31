@@ -6,7 +6,7 @@
     <h1 class="text-4xl"><?php wp_title(''); ?></h1>
     <div class="stats">
       <div>
-        <h2 class="heading">Facts & Figures</h2>
+        <h3 class="heading">Facts & Figures</h3>
         <p>AC member since <?php echo $ac_member ?></p>
         <hr>
         <h3>Active Polar Icebreakers</h3>

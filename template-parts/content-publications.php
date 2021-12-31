@@ -5,6 +5,7 @@
     <p class="text-2xl text-white max-w-3xl mt-3"><?php echo $headline ?></p>
   </div>
 </div>
+<?php if ($_GET['type']) { $_POST['type'] = $_GET['type']; } ?>
 <form action="/publications" method="post" class="filters">
   <h2>Filter By</h2>
   <div class="sm:flex gap-6 items-end flex-wrap">

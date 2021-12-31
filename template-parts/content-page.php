@@ -5,10 +5,12 @@
        <p class="text-2xl text-white max-w-lg mt-3"><?php echo $headline ?></p>
      </div>
 </div>
-<?php if($fullwidth && in_array('no', $fullwidth)): ?> 
-  <div class="max-w-5xl md:mx-auto my-8 mx-4"> 
+<?php if($fullwidth && $fullwidth === 'no'): ?> 
+  <div class="max-w-5xl md:mx-auto my-8 mx-4 content"> 
+<?php elseif($fullwidth && $fullwidth === 'narrow'): ?> 
+  <div class="max-w-3xl md:mx-auto my-8 mx-4 content"> 
 <?php else: ?>
-  <div class="my-16">
+  <div class="my-16 content">
 <?php endif; ?>
   <?php the_content(); ?>
 </div>

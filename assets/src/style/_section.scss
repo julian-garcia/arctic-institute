@@ -89,9 +89,13 @@
 
   .mid {
     @apply bg-blue;
+    h3 {@apply text-white;}
+    a { @apply no-underline; }
   }
 
   .dark {
     @apply bg-blue-dark;
+    h3 {@apply text-white;}
+    a { @apply no-underline; }
   }
 }

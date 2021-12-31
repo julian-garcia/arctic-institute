@@ -40,6 +40,9 @@ module.exports = {
       red: {
         DEFAULT: '#C32339',
         alt: '#C5283D'
+      },
+      input: {
+        DEFAULT: '#EFF3F6'
       }
     },
     extend: {

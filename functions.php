@@ -67,6 +67,14 @@ function widget_areas() {
   );
 }
 
+function add_menu_class($classes, $item, $args) {
+  if($args->theme_location == 'primary') {
+    $classes[] = 'main-menu-item';
+  }
+  return $classes;
+}
+
+add_filter('nav_menu_css_class', 'add_menu_class', 10, 4);
 add_action( 'after_setup_theme', 'config_theme_support' );
 add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'enqueue_script' );

@@ -13,4 +13,4 @@ if ( window.history.replaceState ) {
 }
 
 document.addEventListener('DOMContentLoaded', () => applyMasonrySpacing('load'));
-window.addEventListener('resize', () => applyMasonrySpacing('resize'));
+window.addEventListener('resize', () => applyMasonrySpacing('resize', window.innerWidth));

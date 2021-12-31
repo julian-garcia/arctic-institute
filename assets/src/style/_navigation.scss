@@ -4,11 +4,11 @@
   a {
     text-decoration: none;
     text-transform: uppercase;
-    @apply text-sm font-semibold;
+    @apply text-sm font-semibold p-2;
   }
   
   .sub-menu {
-    @apply hidden;
+    @apply opacity-0;
   }
 
   .search {
@@ -32,6 +32,29 @@
 
     input[type="submit"] {
       @apply hidden;
+    }
+  }
+
+  .main-menu-item {
+    @apply relative z-20;
+    &:hover {
+      .sub-menu {
+        @apply cursor-pointer opacity-100;
+      }
+    }
+    .sub-menu:hover { @apply opacity-100; }
+    .sub-menu {
+      min-width: 300px;
+      box-shadow: 0px 2px 8px 1px rgba(51,51,51,0.1);
+      transition: opacity .5s ease-in-out;
+      @apply absolute z-10 top-7 -left-2 bg-white py-2;
+      a {
+        transition: background .5s ease-in-out, color .5s ease-in-out;
+        @apply px-4 py-2 block text-blue-dark;
+        &:hover {
+          @apply bg-blue text-white;
+        }
+      }
     }
   }
 }

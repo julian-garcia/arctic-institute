@@ -1,10 +1,12 @@
-export function applyMasonrySpacing(eventType) {
-  if (eventType === 'resize') {
-    window.location.reload(false);
-  }
+export function applyMasonrySpacing(eventType, windowWidth) {
   setTimeout(() => {
     const gridCards = document.querySelector('.masonry');
     if (gridCards) {
+      if (eventType === 'resize') {
+        if (windowWidth !== window.innerWidth) {
+          window.location.reload(false);
+        }
+      }
       const publicationsWidth = gridCards.offsetWidth;
       const cards = gridCards.querySelectorAll('.card');
   

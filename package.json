@@ -11,8 +11,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
     "@fortawesome/fontawesome-free": "^5.15.4",
     "autoprefixer": "^10.3.7",
+    "babel-loader": "^8.2.3",
     "css-loader": "^6.4.0",
     "glob": "^7.2.0",
     "imagemin-webpack-plugin": "^2.4.2",

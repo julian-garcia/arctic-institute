@@ -62,7 +62,7 @@
   @apply bg-white p-4 pt-16 relative flex flex-col;
 
   h3:first-of-type {
-    @apply uppercase inline-block py-2 px-4 absolute top-0 left-0 font-sans font-black text-white;
+    @apply uppercase inline-block py-2 px-4 absolute top-0 left-0 font-sans font-black text-white text-alt;
   }
 
   p:nth-of-type(1) {

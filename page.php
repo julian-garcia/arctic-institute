@@ -2,7 +2,7 @@
 <?php 
   the_post();
   set_query_var( 'headline', get_field('headline') );
-  set_query_var( 'fullwidth', get_field('fullwidth') );
+  set_query_var( 'fullwidth', get_field_object('fullwidth')['value'] );
   if (strpos(get_permalink(), '/experts/')) {
     set_query_var( 'email', get_field('email') );
     set_query_var( 'twitter', get_field('twitter') );

@@ -1,0 +1,60 @@
+.wpcf7 {
+  @apply -mt-8;
+
+  .form-input-container {
+    @apply border-t border-b border-blue-dark py-2 my-8;
+    .contact-input {
+      @apply  outline-none bg-transparent text-blue-dark ml-3;
+    
+    }
+  
+    label {
+      @apply bg-input py-2 px-4 block font-black text-blue;
+    }
+
+    .message {
+      textarea {
+        width: 400px;
+        height: 200px;
+        @apply align-text-top -mt-0.5;
+      }
+    }
+  }
+
+  .form-input-radio {
+    label { @apply block py-2 px-4 text-blue font-black; }
+  }
+}
+
+.give-form-title, #give-final-total-wrap { @apply hidden; }
+
+#give-recurring-form, form.give-form, form[id*=give-form] {
+  #give-donation-level-radio-list {
+    @apply mt-8 mb-0;
+    li {
+      @apply inline-block mr-6;
+    }
+  }
+
+  .form-row-first, .form-row-last {
+    @apply clear-both m-0 w-full;
+  }
+
+  #give_purchase_form_wrap {
+    .give-label {
+      @apply border-t border-b border-blue-dark px-4 py-4 my-8 relative z-10 pointer-events-none;
+    }
+    
+    .give-input {
+      margin-top: -90px;
+      @apply pl-48 py-2 pr-4 block font-black text-blue border-none relative  bg-input;
+
+      &::placeholder { color: transparent; }
+    }
+  }
+}
+
+#give_checkout_user_info {
+  legend { @apply hidden; }
+}
+

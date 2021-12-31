@@ -9,6 +9,7 @@
 @import './card';
 @import './list';
 @import './button';
+@import './forms';
 @import './footer';
 
 .custom-logo {
@@ -26,11 +27,11 @@ h1 {
 }
 
 h2 {
-  @apply text-4xl font-bold font-serif text-blue-dark mb-4;
+  @apply text-4xl font-bold font-serif text-blue-dark mb-4 leading-tight;
 }
 
 h3 {
-  @apply text-2xl font-bold font-serif text-blue-dark;
+  @apply text-2xl font-bold font-serif text-blue-dark mb-4 leading-tight;
 }
 
 p {
@@ -53,7 +54,7 @@ hr, .wp-block-separator {
 }
 
 h2.heading {
-  @apply text-4xl ;
+  @apply text-4xl;
 }
 
 h3.heading {

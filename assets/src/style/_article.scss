@@ -1,5 +1,9 @@
 .article {
-  @apply container max-w-6xl mx-auto -mt-8 relative bg-white px-10 py-8;
+  @apply container max-w-6xl mx-auto -mt-8 relative bg-white px-4 py-8;
+
+  @screen md {
+    @apply px-10;
+  }
 
   h1 {
     @apply text-blue-dark font-bold;
