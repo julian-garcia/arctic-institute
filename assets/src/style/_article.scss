@@ -98,7 +98,8 @@
     }
 
     .title {
-      @apply font-serif text-xl font-bold;
+      line-height: 30px;
+      @apply font-serif text-lg font-bold;
     }
 
     .author { @apply inline text-base; }
@@ -110,5 +111,9 @@
         @apply absolute w-6 h-2 ml-2;
       }
     }
+  }
+
+  .event {
+    img {max-width: 400px; @apply my-4; }
   }
 }

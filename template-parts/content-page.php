@@ -12,5 +12,8 @@
 <?php else: ?>
   <div class="my-16 content">
 <?php endif; ?>
+  <?php if (strpos(get_permalink(), '/projects/') && explode('/', get_permalink())[count(explode('/', get_permalink())) - 2] !== 'projects'): ?>
+    <a class="back" href="/projects">Back to Projects</a>
+  <?php endif; ?>
   <?php the_content(); ?>
 </div>

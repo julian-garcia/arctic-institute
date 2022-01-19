@@ -19,11 +19,22 @@
       @apply absolute h-32 bg-no-repeat bg-cover md:mb-24 w-full left-0;
     }
 
+    &.curve-before::before {
+      content: '';
+      background-image: url('../images/curve-before.svg');
+
+      @apply absolute h-32 bg-no-repeat bg-cover w-full left-0 -top-28;
+    }
+
     p, h2, h3 {
       @apply text-white font-sans mb-4;
     }
 
-    p { @apply text-xl }
+    p { @apply text-lg }
+
+    .wp-block-group__inner-container {
+      @apply max-w-5xl mx-auto;
+    }
   }
 
   &.mid {
@@ -47,7 +58,7 @@
         @apply text-white font-sans mb-6;
       }
 
-      p { @apply text-xl }
+      p { @apply text-lg }
     }
   }
 

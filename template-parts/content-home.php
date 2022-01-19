@@ -16,7 +16,7 @@
       the_author_posts_link();
   } ?>
   </p>
-  <p class="text-xl mb-6"><?php echo get_the_excerpt() ?></p>
+  <p class="text-lg mb-6"><?php echo get_the_excerpt() ?></p>
   <p class="date"><?php 
     foreach(wp_get_post_categories( $headline_article->ID ) as $c){
       $cat = get_category( $c );
@@ -65,7 +65,7 @@
   </div>
   <div class="text-center mt-5 p-3 flex justify-center gap-8">
     <a href="/publications" class="button blue">VIEW ALL PUBLICATIONS</a>
-    <a href="#" class="button clear">VIEW Upcoming Events</a>
+    <a href="/events" class="button clear">VIEW Upcoming Events</a>
   </div>
 </div>
 

@@ -42,6 +42,7 @@
   }
 
   .date {
-    @apply text-xl font-black relative;
+    line-height: 30px;
+    @apply text-lg font-black relative;
   }
 }

@@ -82,7 +82,8 @@
     .heading { @apply text-blue mt-0; }
 
     p {
-      @apply text-xl;
+      line-height: 30px;
+      @apply text-lg;
     }
 
     h3 { @apply font-sans mb-2; }

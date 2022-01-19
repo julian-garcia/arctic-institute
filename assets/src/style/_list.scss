@@ -3,7 +3,8 @@
 
   li {
     counter-increment: step-counter;
-    @apply list-none list-outside relative pl-4 text-xl;
+    line-height: 30px;
+    @apply list-none list-outside relative pl-4 text-lg;
 
     &::before {
       content: counter(step-counter);

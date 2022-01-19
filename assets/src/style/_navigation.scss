@@ -6,13 +6,20 @@
     text-transform: uppercase;
     @apply text-sm font-semibold p-2;
   }
+
+  .main-menu-item a {
+    transition: background .5s ease-in-out, color .5s ease-in-out;
+    &:hover {
+      @apply bg-blue text-white;
+    }
+  }
   
   .sub-menu {
     @apply opacity-0;
   }
 
   .search {
-    @apply absolute text-blue-dark right-2 top-0 cursor-pointer z-10 text-xl;
+    @apply absolute text-blue-dark right-2 top-0 cursor-pointer z-10 text-lg;
     &.white { @apply text-white; }
   }
 

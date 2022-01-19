@@ -1,0 +1,37 @@
+.content {
+  .calendar-container {
+    @apply bg-white max-w-5xl md:mx-auto mx-4 p-3 relative mt-8;
+
+    .calendar {
+      border-spacing: 4px;
+      @apply border-separate;
+      th {
+        @apply text-blue-dark text-xl;
+      }
+      .calendar-body {
+        td {
+          vertical-align: top;
+          @apply bg-grey-light p-0 w-1/12;
+  
+          h3 {
+            @apply bg-blue-dark text-white;
+          }
+        }
+        tr {
+          height: 170px;
+        }
+      }
+    }
+
+    .calendar-prev, .calendar-next {
+      @apply absolute top-2 cursor-pointer text-3xl text-blue;
+    }
+
+    .calendar-prev { @apply left-3 }
+    .calendar-next { @apply right-3 }
+  
+    h3.calendar-month-year {
+      @apply text-blue-dark;
+    }
+  }
+}

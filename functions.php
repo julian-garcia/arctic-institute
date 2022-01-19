@@ -74,9 +74,30 @@ function add_menu_class($classes, $item, $args) {
   return $classes;
 }
 
-add_filter('nav_menu_css_class', 'add_menu_class', 10, 4);
+function event_post_type() {
+  register_post_type('event',
+    array(
+      'rewrite' => array('slug' => 'events'),
+      'labels' => array(
+        'name' => 'Events',
+        'singular_name' => 'Event',
+        'add_new_item' => 'Add New Event',
+        'edit_item' => 'Edit Event'
+      ),
+      'menu_icon' => 'dashicons-calendar',
+      'public' => true,
+      'has_archive' => false,
+      'supports' => array(
+        'title', 'thumbnail', 'editor', 'excerpt'
+      )
+    )
+  );
+}
+
+add_filter( 'nav_menu_css_class', 'add_menu_class', 10, 4 );
 add_action( 'after_setup_theme', 'config_theme_support' );
 add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'enqueue_script' );
 add_action( 'init', 'setup_menus' );
+add_action( 'init', 'event_post_type' );
 add_action( 'widgets_init', 'widget_areas' );

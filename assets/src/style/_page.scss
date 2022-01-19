@@ -32,6 +32,15 @@
   }
 }
 
+.back {
+  @apply no-underline relative ml-6 mb-8 block text-blue;
+
+  &:before {
+      content: url('../images/paginate-prev.svg');
+      @apply absolute h-2 w-4 -left-6;
+    }
+}
+
 .overview {
   @apply my-16 font-serif font-bold text-2xl max-w-3xl mx-auto relative px-4 lg:px-0;
 
@@ -62,7 +71,7 @@
 
   .wp-block-column {
     background-size: auto 110px;
-    min-height: 140px;
+    min-height: 180px;
     transition: all .5s ease-in-out;
     @apply bg-no-repeat bg-top cursor-pointer relative;
 
@@ -129,7 +138,7 @@
 .values, .leadership {
   * { @apply font-sans; }
   h2 { @apply text-3xl text-blue; }
-  p { @apply text-xl; }
+  p { @apply text-lg; }
 }
 
 .values {
@@ -138,7 +147,7 @@
     width: fit-content;
     @apply ml-4 mt-4;
     li {
-      @apply relative mb-4 font-serif text-xl cursor-pointer;
+      @apply relative mb-4 font-serif text-lg cursor-pointer;
       &.active {
         @apply text-red-alt font-bold;
       }
@@ -326,7 +335,7 @@
 }
 
 .sub-highlight {
-  @apply pl-4 max-w-3xl mx-auto my-16 text-xl;
+  @apply pl-4 max-w-3xl mx-auto my-16 text-lg;
 }
 
 .contact-details {
@@ -342,7 +351,7 @@
     @apply mt-2;
   }
   .wp-block-post-title {
-    @apply text-xl mt-40;
+    @apply text-lg mt-40;
     a {@apply no-underline text-blue-dark;}
   }
   .wp-block-post-date {

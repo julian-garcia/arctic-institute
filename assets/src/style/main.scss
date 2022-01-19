@@ -10,6 +10,7 @@
 @import './list';
 @import './button';
 @import './forms';
+@import './calendar';
 @import './footer';
 
 .custom-logo {
@@ -32,6 +33,10 @@ h2 {
 
 h3 {
   @apply text-2xl font-bold font-serif text-blue-dark mb-4 leading-tight;
+}
+
+h4 {
+  @apply text-lg font-bold font-serif text-blue-dark mb-4 leading-tight;
 }
 
 p {
@@ -59,4 +64,8 @@ h2.heading {
 
 h3.heading {
   @apply text-2xl font-semibold;
+}
+
+h4.heading {
+  @apply text-lg;
 }

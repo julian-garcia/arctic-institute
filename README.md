@@ -2,7 +2,7 @@
 
 Custom WordPress theme for non profit organisation "The Arctic Institute", a "think-and-do-tank" to help inform Arctic policy in the context of the climate crisis. [thearcticinstitute.org](https://www.thearcticinstitute.org/)
 
-[![The Arctic Institute](./assets/dist/images/logo-blue.svg)](https://www.thearcticinstitute.org/)
+[![The Arctic Institute](./assets/src/images/logo-blue.svg)](https://www.thearcticinstitute.org/)
 
 ## Tech Stack
 

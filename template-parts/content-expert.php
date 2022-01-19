@@ -50,7 +50,7 @@
       <hr>
       <?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
         <div class="mb-4">
-          <a href="<?php the_permalink() ?>" class="text-xl mb-0"><?php the_title(); ?></a>
+          <a href="<?php the_permalink() ?>" class="text-lg mb-0"><?php the_title(); ?></a>
           <p class="m-0"><?php echo get_the_excerpt(); ?></p>
           <p class="m-0"><?php the_date('F j, Y'); ?></p>
         </div>

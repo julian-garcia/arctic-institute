@@ -6,7 +6,7 @@
   }
 
   h3, label {
-    @apply text-xl text-blue font-sans;
+    @apply text-lg text-blue font-sans;
   }
 
   select {
@@ -19,6 +19,10 @@
 
     svg {
       @apply absolute right-4 top-1/2 pointer-events-none -translate-y-1/2;
+    }
+
+    i {
+      @apply absolute right-4 bottom-4;
     }
   }
 }
@@ -56,7 +60,7 @@
     }
 
     .date, .author { @apply text-base; }
-    .title { @apply block font-serif text-xl; }
+    .title { @apply block font-serif text-lg; }
 
     hr {
       max-width: 200px;
@@ -81,7 +85,7 @@
   @apply max-w-6xl mx-auto text-center my-8 h-12;
 
   .page-numbers {
-    @apply font-serif text-xl text-blue px-4;
+    @apply font-serif text-lg text-blue px-4;
 
     &.prev, &.next {
       @apply relative;

@@ -1,4 +1,6 @@
-.footer {  
+.footer {
+  @apply mt-8;
+  
   .copyright {
     p { @apply mx-auto mb-0; }
     a {
@@ -13,7 +15,7 @@
     min-width: 200px;
     @apply flex-1 flex flex-col;
 
-    h2 { @apply text-xl; }
+    h2 { @apply text-lg; }
     p { @apply text-alt; }
     p, h2 {
       @apply text-white font-sans;

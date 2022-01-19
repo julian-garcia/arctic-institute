@@ -7,6 +7,10 @@ document.querySelectorAll('.values').forEach(values => {
       li.classList.remove('active');
     }
   });
+  values.querySelectorAll('.wp-block-group').forEach((group, i) => {
+    group.classList.add('hidden');
+    if (i == 0) { group.classList.remove('hidden'); }
+  });
   values.addEventListener('click', e => {
     if (e.target.nodeName === 'LI') {
       values.querySelectorAll('li').forEach((li, i) => {
