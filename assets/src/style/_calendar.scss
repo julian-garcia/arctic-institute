@@ -1,6 +1,6 @@
 .content {
   .calendar-container {
-    @apply bg-white max-w-5xl md:mx-auto mx-4 p-3 relative mt-8;
+    @apply bg-white max-w-5xl md:mx-auto mx-4 p-3 relative mt-8 hidden md:block;
 
     .calendar {
       border-spacing: 4px;
@@ -32,6 +32,25 @@
   
     h3.calendar-month-year {
       @apply text-blue-dark;
+    }
+  }
+
+  .calendar-list {
+    @apply block text-center md:hidden;
+
+    .list-event {
+      @apply text-white text-xl no-underline mb-4 block;
+    }
+
+    .list-event-title {
+      max-width: 350px;
+      @apply mr-6 block xs:inline-block align-middle relative;
+
+      &::after {
+        content: '';
+        border-radius: 50%;
+        @apply w-2 h-2 absolute bg-white ml-3 mt-3;
+      }
     }
   }
 }

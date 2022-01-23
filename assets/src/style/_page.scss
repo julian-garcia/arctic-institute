@@ -55,7 +55,7 @@
 }
 
 .vision {
-  @apply mx-auto max-w-5xl bg-white px-4 py-4 md:py-16 md:px-32 relative;
+  @apply mx-auto max-w-5xl bg-white px-4 py-8 md:py-16 md:px-32 relative;
 
   img { height: 112px; @apply w-auto mx-auto; }
   figcaption { @apply text-center text-base text-blue font-semibold; }
@@ -133,6 +133,10 @@
   background-image: url(../images/polar.jpg);
 
   @apply bg-cover bg-no-repeat mb-0 pb-16;
+}
+
+.move-up {
+  @apply mt-4 md:-mt-24;
 }
 
 .values, .leadership {

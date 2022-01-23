@@ -65,6 +65,30 @@
         <tbody class="calendar-body"></tbody>
       </table>
     </div>
+    <div class="calendar-list">
+      <hr class="border-white">
+      <?php 
+        $events = new WP_Query(array(
+          'post_type' => 'event',
+          'meta_query'  => array(
+            'featured_clause' => array(
+                'key' => 'date',
+                'compare' => 'EXISTS'
+            )
+          ),
+          'orderby' => array( 'featured_clause' => 'DESC' ),
+          'posts_per_page' => '10'
+        ));
+        while($events->have_posts() ):
+        $events->the_post(); 
+      ?>
+        <a class="list-event" href="<?php the_permalink(); ?>">
+          <span class="list-event-title"><?php the_title(); ?></span>
+          <?php echo date_format(date_create(get_field('date')), 'D M j, Y'); ?>
+        </a>
+        <?php wp_reset_postdata(); ?>
+      <?php endwhile; ?>
+    </div>
   </div>
 </div>
 <?php

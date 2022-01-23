@@ -1,5 +1,5 @@
 .section {
-  @apply px-4 py-4 md:py-12 relative;
+  @apply px-6 py-4 md:py-12 lg:px-0 relative;
 
   &.limit, .limit {
     @apply max-w-5xl mx-auto;
@@ -15,15 +15,18 @@
     &.curve-after::after {
       content: '';
       background-image: url('../images/curve.svg');
+      background-size: 100% 8rem;
 
-      @apply absolute h-32 bg-no-repeat bg-cover md:mb-24 w-full left-0;
+      @apply absolute h-32 bg-no-repeat md:mb-16 w-full left-0;
     }
 
     &.curve-before::before {
       content: '';
+      top: calc(-8rem + 1px);
       background-image: url('../images/curve-before.svg');
+      background-size: 100% 8rem;
 
-      @apply absolute h-32 bg-no-repeat bg-cover w-full left-0 -top-28;
+      @apply absolute h-32 bg-no-repeat w-full left-0 mt-12 md:mt-4;
     }
 
     p, h2, h3 {
@@ -41,7 +44,7 @@
     @apply bg-blue;
 
     .wp-block-columns {
-      @apply max-w-5xl mx-auto;
+      @apply max-w-5xl mx-auto gap-x-0 gap-y-4 mb-4 md:mb-8;
     }
 
     &.curve-before::before {
@@ -67,6 +70,7 @@
   }
 
   &.leadership {
+    @apply pb-4 md:pb-0;
     .wp-block-group__inner-container {@apply md:max-w-5xl;}
   }
 }

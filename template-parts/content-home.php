@@ -69,6 +69,6 @@
   </div>
 </div>
 
-<div class="section mt-28 md:mt-14 -mx-4 pt-28 pb-10 bg-white">
+<div class="mt-24 md:mt-16 -mx-4 pt-4 pb-10 bg-white">
   <?php the_content(); ?>
 </div>

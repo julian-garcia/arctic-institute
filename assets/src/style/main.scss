@@ -24,11 +24,20 @@
 }
 
 h1 {
+  letter-spacing: -1px;
   @apply text-blue-dark text-5xl font-bold;
+
+  @screen sm {
+    letter-spacing: unset;
+  }
 }
 
 h2 {
+  letter-spacing: -1px;
   @apply text-4xl font-bold font-serif text-blue-dark mb-4 leading-tight;
+  @screen sm {
+    letter-spacing: unset;
+  }
 }
 
 h3 {
@@ -52,6 +61,8 @@ hr, .wp-block-separator {
   @apply max-w-xs mx-auto my-8 border-b-0 border-t-2 border-blue-light;
   &.white { @apply border-white; }
 }
+
+iframe { @apply max-w-full }
 
 .heading {
   @apply text-4xl font-bold font-sans text-blue-dark mt-8 mb-4;
