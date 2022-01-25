@@ -8,10 +8,14 @@ import './script/approach';
 import './script/search';
 import './script/calendar';
 import {applyMasonrySpacing} from './script/masonry';
+import {hideSearch} from './script/search';
 
 if ( window.history.replaceState ) {
   window.history.replaceState( null, null, window.location.href );
 }
 
 document.addEventListener('DOMContentLoaded', () => applyMasonrySpacing('load'));
-window.addEventListener('resize', () => applyMasonrySpacing('resize'));
+window.addEventListener('resize', () => {
+  applyMasonrySpacing('resize');
+  hideSearch();
+});
