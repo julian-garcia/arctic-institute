@@ -44,6 +44,10 @@
 .overview {
   @apply my-16 font-serif font-bold text-2xl max-w-3xl mx-auto relative px-4 lg:px-0;
 
+  &.no-margin {
+    @apply my-0;
+  }
+
   &:before {
     content: '';
     @apply h-full w-1 absolute left-0 lg:-left-8 bg-red;
@@ -55,7 +59,8 @@
 }
 
 .vision {
-  @apply mx-auto max-w-5xl bg-white px-4 py-8 md:py-16 md:px-32 relative;
+  @apply mx-auto max-w-5xl bg-white px-4 py-8 
+    md:py-16 md:px-32 relative bg-opacity-50 md:bg-opacity-100 bg-gradient-to-b from-white to-current;
 
   img { height: 112px; @apply w-auto mx-auto; }
   figcaption { @apply text-center text-base text-blue font-semibold; }
@@ -132,7 +137,7 @@
 .polar-background {
   background-image: url(../images/polar.jpg);
 
-  @apply bg-cover bg-no-repeat mb-0 pb-16;
+  @apply bg-cover bg-no-repeat mb-0 md:pb-16;
 }
 
 .move-up {
@@ -146,10 +151,11 @@
 }
 
 .values {
-  @apply max-w-5xl mx-auto my-8 md:my-20 md:px-4 lg:px-0 md:flex block;
+  @apply max-w-5xl mx-auto my-8 md:my-20 md:flex block gap-x-4;
+  &.wp-block-columns > .wp-block-column:not(:first-child) { @apply ml-0; }
   ul {
     width: fit-content;
-    @apply ml-4 mt-4;
+    @apply -ml-0.5 md:ml-8 my-8 md:my-4;
     li {
       @apply relative mb-4 font-serif text-lg cursor-pointer;
       &.active {
@@ -170,8 +176,15 @@
       }
     }
   }
-  >.wp-block-column {
+  &.section {
+    @apply px-8 md:px-4 lg:px-0;
+  }
+  &.section > .wp-block-column.wp-block-column {
     margin-left: 0;
+
+    h4 {
+      @apply mb-12;
+    }
   }
 }
 
@@ -332,6 +345,12 @@
 
   h3 { @apply text-6xl text-blue font-bold; }
   p { max-width: 220px; @apply text-2xl font-bold mx-auto mt-4; }
+  .wp-block-columns {
+    @apply gap-8 mb-8;
+    .wp-block-column, .wp-block-column:not(:first-child) { 
+      @apply ml-0; 
+    }
+  }
 }
 
 .highlight {

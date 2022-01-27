@@ -76,6 +76,8 @@
 }
 
 .alternating-cols {
+  @apply gap-8 block md:flex;
+
   > * { min-height: 280px; @apply p-6 relative; }
 
   h2, p { @apply text-white; }
@@ -84,19 +86,15 @@
   hr { @apply border-white mx-0 my-4; }
 
   a {
-    max-width: 100%;
-    @apply text-news uppercase absolute bottom-6 pr-4;
-
-    @screen sm { max-width: 250px; }
-    @screen md { max-width: 100%; }
+    width: calc(100% - 5rem);
+    @apply text-news uppercase absolute bottom-6;
 
     &::after {
       content: '';
       background-image: url(../images/arrow-alt.svg);
       width: 20px;
       height: 14px;
-      top: 50%;
-      transform: translateY(-50%);
+      bottom: 10px;
 
       @apply absolute bg-no-repeat bg-contain ml-4;
     }
@@ -112,5 +110,11 @@
     @apply bg-blue-dark;
     h3 {@apply text-white;}
     a { @apply no-underline; }
+  }
+
+  &.wp-block-columns {
+    .wp-block-column, .wp-block-column:not(:first-child) { 
+      @apply ml-0 mb-8 md:mb-0; 
+    }
   }
 }

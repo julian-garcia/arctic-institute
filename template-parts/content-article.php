@@ -10,7 +10,7 @@
         the_author_posts_link();
     } ?> 
     </span>
-    <span class="mx-8">|</span>
+    <span class="separator">|</span>
     <span class="categories">
       <?php 
         $post_terms = wp_get_object_terms( get_the_ID(), 'category', array( 'fields' => 'ids' ) );

@@ -27,6 +27,7 @@
 
 h1 {
   letter-spacing: -1px;
+  line-height: 1.1;
   @apply text-blue-dark text-5xl font-bold;
 
   @screen sm {
@@ -51,7 +52,7 @@ h4 {
 }
 
 p {
-  @apply mb-3 font-sans text-blue-dark max-w-4xl text-current text-lg;
+  @apply mb-4 font-sans text-blue-dark max-w-4xl text-current text-lg;
   &.white { @apply text-white; }
 }
 

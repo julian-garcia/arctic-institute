@@ -49,7 +49,8 @@
 .country {
   border-radius: 50%;
   width: 195px;
-  height: 195px;
+  max-width: 100%;
+  aspect-ratio: 1;
   @apply border bg-grey border-grey-dark relative mx-auto;
 
   p {
@@ -65,10 +66,12 @@
 .country-feature { min-height: 400px; }
 
 .country-details {
-  @apply -mt-36 relative;
+  @apply -mt-48 relative -mx-10 sm:mx-0;
 
   h1 {
-    min-width: 400px;
+    @screen sm {
+      min-width: 400px;
+    }
     @apply text-white bg-news p-4 inline-block font-bold;
   }
 

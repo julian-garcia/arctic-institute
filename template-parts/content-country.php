@@ -1,7 +1,7 @@
 <div class="page-feature-image country-feature"
      style="background-image: url(<?php the_post_thumbnail_url() ?>)">
 </div>
-<div class="max-w-5xl md:mx-auto my-8 mx-4">
+<div class="max-w-5xl md:mx-auto my-8 mx-4 section">
   <div class="country-details">
     <h1 class="text-4xl"><?php wp_title(''); ?></h1>
     <div class="stats">
