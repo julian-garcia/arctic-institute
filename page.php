@@ -18,6 +18,8 @@
     set_query_var( 'coastline', get_field('coastline') );
     set_query_var( 'land_area', get_field('land_area') );
     get_template_part('template-parts/content', 'country'); 
+  } else if(strpos(get_permalink(), '/science-backgrounders/') && explode('/', get_permalink())[count(explode('/', get_permalink())) - 2] !== 'science-backgrounders') {
+    get_template_part('template-parts/content', 'science'); 
   } else {
     get_template_part('template-parts/content', 'page'); 
   }

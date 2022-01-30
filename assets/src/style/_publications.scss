@@ -33,6 +33,10 @@
   &.less-spacing {
     @apply mt-8;
   }
+
+  &.no-bottom-spacing {
+    @apply mb-0;
+  }
   
   & .publication-card {
     flex-basis: 100%;

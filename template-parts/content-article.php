@@ -1,14 +1,14 @@
 <div class="the-article">
   <a class="back" href="/publications">Back to Publications</a>
   <h1 class="leading-tight text-4xl"><?php wp_title(''); ?></h1>
-  <p class="meta">
+  <div class="meta">
     <span class="authors">
-    <?php echo 'By'; ?> 
-    <?php if ( function_exists( 'coauthors_posts_links' ) ) {
-        coauthors_posts_links();
-    } else {
-        the_author_posts_link();
-    } ?> 
+      By
+      <?php if ( function_exists( 'coauthors_posts_links' ) ) {
+          coauthors_posts_links();
+      } else {
+          the_author_posts_link();
+      } ?> 
     </span>
     <span class="separator">|</span>
     <span class="categories">
@@ -23,8 +23,9 @@
           'include'   => implode( ',' , $post_terms )
       ) ); ?>
     </span>
+    <div class="dot"></div>
     <span class="date"><?php the_date() ?></span>
-  </p>
+  </div>
   <div class="tags">
     <?php the_tags('', ', ','') ?>
   </div>

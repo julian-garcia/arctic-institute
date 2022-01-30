@@ -69,6 +69,10 @@
     @apply max-w-3xl mx-auto;
   }
 
+  .wp-block-columns.wp-block-columns {
+    @apply gap-8 mb-8;
+  }
+
   &.leadership {
     @apply pb-4 md:pb-0;
     .wp-block-group__inner-container {@apply md:max-w-5xl;}

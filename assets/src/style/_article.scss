@@ -45,34 +45,39 @@
     }
 
     .meta {
-      @apply text-lg my-4 md:flex items-center justify-start;
+      grid-template-columns: min-content min-content max-content;
+      @apply text-lg my-4 grid gap-4 items-center;
   
-      .authors {
-        @apply block max-w-full md:inline;
+      @screen lg {
+        grid-template-columns: minmax(130px, 1fr) min-content min-content min-content max-content;
+      }
 
-        @screen md {
-          max-width: 200px;
-        }
+      .authors {
+        @apply no-underline text-blue col-span-12 lg:col-span-1;
+        a {@apply no-underline font-normal;}
       }
 
       .separator {
-        @apply md:mx-4 lg:mx-8 hidden md:inline;
+        @apply justify-self-center text-blue hidden lg:block;
+      }
+
+      .dot {
+        border-radius: 50%;
+        @apply w-2 h-2 bg-blue justify-self-center;
+      }
+
+      .date {
+        @apply no-underline text-blue;
       }
 
       .categories {
-        @apply uppercase relative mr-8;
+        @apply uppercase relative md:text-center;
   
         a {
-          @apply text-blue-dark;
+          @apply text-blue no-underline;
           &::before {
             content: none;
           }
-        }
-  
-        &::after {
-          content: '';
-          border-radius: 50%;
-          @apply w-2 h-2 absolute bg-blue-dark ml-2 mt-2;
         }
       }
     }

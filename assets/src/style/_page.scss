@@ -60,7 +60,8 @@
 
 .vision {
   @apply mx-auto max-w-5xl bg-white px-4 py-8 
-    md:py-16 md:px-32 relative bg-opacity-50 md:bg-opacity-100 bg-gradient-to-b from-white to-current;
+    md:py-16 md:px-32 relative bg-opacity-50 md:bg-opacity-100 
+    bg-gradient-to-b from-white to-current;
 
   img { height: 112px; @apply w-auto mx-auto; }
   figcaption { @apply text-center text-base text-blue font-semibold; }

@@ -82,7 +82,11 @@
 }
 
 .news-card {
-  @apply bg-white p-4 pt-16 relative flex flex-col;
+  @apply bg-white p-4 pt-16 relative flex flex-col ml-0;
+
+  .wp-block-columns &.wp-block-column:not(:first-child) {
+    @apply ml-0;
+  }
 
   h3:first-of-type {
     @apply uppercase inline-block py-2 px-4 absolute top-0 left-0 font-sans font-black text-white text-alt;
