@@ -65,7 +65,7 @@
     }
   }
 
-  .wp-block-group__inner-container {
+  .wp-block-group__inner-container, &.wp-block-columns {
     @apply max-w-3xl mx-auto;
   }
 

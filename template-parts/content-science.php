@@ -49,27 +49,4 @@
     </div>
   </div>
   <?php the_content(); ?>
-  <?php $library = get_field('library');
-    if( $library ): $count = count($library); ?>
-    <div class="section library grid grid-cols-2 mx-auto max-w-3xl gap-4">
-      <?php foreach( $library as $key => $library_post ): 
-          $post = get_post( $library_post ); 
-          setup_postdata( $post );
-          $permalink = get_permalink( $library_post->ID );
-          $title = get_the_title( $library_post->ID ); ?>
-        <div class="item">
-          <p class="author">
-            <?php if ( function_exists( 'coauthors_posts_links' ) ) {
-                coauthors_posts_links(null, null, '');
-            } else {
-                the_author_posts_link();
-            } ?>
-          </p>
-          <a href="<?php echo esc_url( $permalink ); ?>" class="title"><?php echo esc_html( $title ); ?></a>
-          <a href="<?php echo esc_url( $permalink ); ?>" class="more">Read more</a>
-          <?php if (($key + 2) < $count): ?><hr><?php endif; ?>
-        </div>
-      <?php wp_reset_postdata(); endforeach; ?>
-    </div>
-  <?php endif; ?>
 </div>
