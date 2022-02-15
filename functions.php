@@ -94,6 +94,12 @@ function event_post_type() {
   );
 }
 
+function set_posts_per_page( $query ) {
+  if ( ($query->is_search() || $query->is_archive()) && !is_page('media') && !is_page('the-arctic-this-week-newsletter') ) {
+    $query->set( 'posts_per_page', 10 );
+  }
+}
+
 add_filter( 'nav_menu_css_class', 'add_menu_class', 10, 4 );
 add_action( 'after_setup_theme', 'config_theme_support' );
 add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
@@ -101,3 +107,4 @@ add_action( 'wp_enqueue_scripts', 'enqueue_script' );
 add_action( 'init', 'setup_menus' );
 add_action( 'init', 'event_post_type' );
 add_action( 'widgets_init', 'widget_areas' );
+add_action( 'pre_get_posts',  'set_posts_per_page'  );

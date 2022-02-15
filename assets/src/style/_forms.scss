@@ -5,7 +5,6 @@
     @apply border-t border-b border-blue-dark py-2 my-8;
     .contact-input {
       @apply  outline-none bg-transparent text-blue-dark ml-3;
-    
     }
   
     label {
@@ -58,3 +57,28 @@
   legend { @apply hidden; }
 }
 
+.yikes-easy-mc-form {
+  max-width: 550px;
+  label {
+    @apply border-t border-b border-blue-dark py-2 my-8 text-blue relative font-sans;
+    &:first-child {
+      @apply mt-0;
+    }
+    input[type=text], input[type=email], select {
+      background-color: #EFF3F6 !important;
+      @apply outline-none border-0 my-1 font-sans pl-36;
+      &:focus {
+        outline: none;
+      }
+    }
+    span {
+      @apply absolute left-4 top-1/2 transform -translate-y-1/2 font-sans;
+    }
+  }
+  button[type=submit] {
+    @apply mt-12;
+    > span {
+      @apply bg-blue text-white border-blue border-solid border-2 hover:bg-blue-dark hover:border-blue-dark p-4 uppercase;
+    }
+  }
+}

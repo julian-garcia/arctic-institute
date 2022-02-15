@@ -126,8 +126,9 @@
   .searchform {
     input[type="text"] {
       width: calc(100% - 4rem);
-      @apply text-white h-8 p-1.5 border-b-2 border-white 
-        bg-transparent absolute bottom-16 mx-8 pb-2 text-3xl;
+      border-radius: 0;
+      @apply text-white h-12 p-0 border-b-2 border-white 
+        bg-transparent absolute bottom-16 mx-8 pb-2 text-3xl leading-tight;
       &:focus {
         outline: none;
       }

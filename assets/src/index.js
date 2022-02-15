@@ -7,6 +7,7 @@ import './script/values';
 import './script/approach';
 import './script/search';
 import './script/calendar';
+import './script/experts';
 import {applyMasonrySpacing} from './script/masonry';
 import {hideSearch} from './script/search';
 

@@ -7,19 +7,18 @@
 </div>
 <div class="content">
   <div class="section">
-    <h2 class="heading text-center">Latest Analysis</h2>
+    <h2 class="heading text-center">Latest Analysis </h2>
     <?php
-      $post_query = wp_get_recent_posts(array( 
-        'numberposts' => 3, 
+      $post_query = array_slice(wp_get_recent_posts(array( 
         'post_status' => 'publish',
         'post_type' => 'post', 
-        'tag_slug__in' => array(get_field('topic')->slug),
-        'order'        => 'DESC',
-        'orderby'      => 'publish_date'
-      )); ?>
+        'tag' => array(get_field('topic')->slug)
+      )), 0, 3);
+    ?>
     <div class="publications less-spacing no-bottom-spacing">
-      <?php foreach( $post_query as $key => $post_item ) : 
-        $post = get_post( $post_item['ID'] );
+      <?php 
+      foreach( $post_query as $post_item ) : 
+        $post = get_post( $post_item['ID'] ); 
         setup_postdata( $post );
         $cats = get_the_category(); ?>
         <div class="publication-card card">

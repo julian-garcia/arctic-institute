@@ -12,6 +12,11 @@
   }
 }
 
+.page-title {
+  &.left {@apply text-left md:px-8 }
+  @apply -mt-12 pt-12 md:px-4 lg:px-0 text-center bg-white relative md:-mx-8 font-title;
+}
+
 .arrow-links {
   a {
     @apply text-blue relative;
@@ -228,6 +233,7 @@
     .wp-block-cover__inner-container {
       p { @apply mx-4; }
       p:first-of-type { @apply mt-16; }
+      .text {@apply text-white}
       .text, .read-more { @apply hidden; }
   
       &:hover {
@@ -407,4 +413,31 @@
       @apply absolute top-1 bg-no-repeat bg-contain -right-6 text-blue;
     }
   }
+}
+
+.take-five {
+  @apply my-16;
+  .wp-block-post {
+    max-width: 580px;
+    @apply relative ml-44 mb-12;
+
+    &::after {
+      content: '';
+      background-image: url(../images/take-five.jpg);
+      @apply absolute top-0 -left-44 w-40 h-20 bg-no-repeat bg-cover;
+    }
+  }
+  .wp-block-post-excerpt p, .wp-block-post-title, .wp-block-post-date {
+    @apply text-alt font-sans;
+  }
+  .wp-block-post-title, .wp-block-post-date {
+    @apply text-blue-dark;
+  }
+  .wp-block-post-title {
+    @apply mb-1;
+  }
+}
+.newsletter-archive {
+  max-width: 500px;
+  @apply mx-auto ;
 }

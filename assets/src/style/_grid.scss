@@ -58,3 +58,33 @@
     @apply border-grey-dark border-t w-full mx-0 mt-20;
   }
 }
+
+.page-grid {
+  >.wp-block-group__inner-container {
+    display: grid;
+    @apply grid auto-cols-auto gap-6;
+
+    @screen md {
+      @apply grid-cols-2;
+    }
+
+    @screen lg {
+      @apply grid-cols-4;
+    }
+
+    >.wp-block-cover {
+      min-height: 330px;
+      a {color: inherit; @apply no-underline}
+    }
+  }
+}
+
+.query-grid {
+  > .wp-block-post-template {
+    @apply grid md:grid-cols-3 gap-8 max-w-5xl md:mx-auto mx-4;
+
+    .wp-block-post {
+      @apply bg-white p-4;
+    }
+  }
+}

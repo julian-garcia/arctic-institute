@@ -45,11 +45,15 @@
     }
 
     .meta {
-      grid-template-columns: min-content min-content max-content;
-      @apply text-lg my-4 grid gap-4 items-center;
+      @apply text-lg my-4 block;
   
+      @screen sm {
+        grid-template-columns: max-content min-content max-content;
+        @apply grid gap-4 items-center;
+      }
+
       @screen lg {
-        grid-template-columns: minmax(130px, 1fr) min-content min-content min-content max-content;
+        grid-template-columns: minmax(130px, max-content) min-content max-content min-content max-content;
       }
 
       .authors {
@@ -63,15 +67,15 @@
 
       .dot {
         border-radius: 50%;
-        @apply w-2 h-2 bg-blue justify-self-center;
+        @apply w-2 h-2 bg-blue justify-self-center hidden sm:block;
       }
 
       .date {
-        @apply no-underline text-blue;
+        @apply no-underline text-blue block;
       }
 
       .categories {
-        @apply uppercase relative md:text-center;
+        @apply block uppercase relative md:text-center;
   
         a {
           @apply text-blue no-underline;
@@ -80,6 +84,10 @@
           }
         }
       }
+    }
+    .social-share {
+      a {@apply no-underline}
+      i {@apply text-lg text-blue mr-4}
     }
   }
 

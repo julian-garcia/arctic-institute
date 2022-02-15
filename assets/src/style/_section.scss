@@ -5,6 +5,13 @@
     @apply max-w-5xl mx-auto;
   }
 
+  &.full-width {
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    @apply relative left-1/2 right-1/2;
+  }
+
   &.dark {
     @apply bg-blue-dark;
 
@@ -63,10 +70,6 @@
 
       p { @apply text-lg }
     }
-  }
-
-  .wp-block-group__inner-container, &.wp-block-columns {
-    @apply max-w-3xl mx-auto;
   }
 
   .wp-block-columns.wp-block-columns {

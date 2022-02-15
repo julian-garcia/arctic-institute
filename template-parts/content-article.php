@@ -29,6 +29,20 @@
   <div class="tags">
     <?php the_tags('', ', ','') ?>
   </div>
+  <div class="social-share my-4">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank">
+      <i class="fab fa-brands fa-facebook-f"></i>
+    </a>
+    <a href="whatsapp://send?text=<?php the_permalink(); ?>">
+      <i class="fab fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?url=<?php the_permalink(); ?>" target="_blank">
+      <i class="fab fa-brands fa-linkedin-in"></i>
+    </a>
+    <a href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>" target="_blank">
+      <i class="fab fa-brands fa-twitter"></i>
+    </a>
+  </div>
   <?php the_post_thumbnail(); ?>
   <?php the_content(); ?>
 </div>
