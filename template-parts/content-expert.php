@@ -8,7 +8,9 @@
       <p class="text-2xl max-w-md mt-3"><?php echo $headline ?></p>
       <p>
         <strong>Email:</strong> <a href="mailto: <?php echo $email ?>"><?php echo $email ?></a><br>
+        <?php if ($twitter): ?>
         <strong>Twitter:</strong> <a href="https://twitter.com/<?php echo $twitter ?>" target="_blank"><?php echo $twitter ?></a><br>
+        <?php endif; ?>
         <strong>Working Location:</strong> <?php echo $working_location ?><br>
         <strong>Languages:</strong> <?php echo $languages ?><br>
         <?php
@@ -25,11 +27,11 @@
               foreach($categories as $c){
                 $cat = get_category( $c );
                 if (!in_array($cat->name, $cats)) {
-                  array_push($cats, $cat->name);
-                  echo '<a href="/category/' . $cat->slug . '">' . $cat->name . '</a>';
+                  array_push($cats, '<a href="/category/' . $cat->slug . '">' . $cat->name . '</a>');
                 }
-              }             
+              }
             }
+            echo implode(', ', $cats);
           }
           wp_reset_query();
         ?>

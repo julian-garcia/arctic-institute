@@ -94,9 +94,33 @@ function event_post_type() {
   );
 }
 
+function expert_post_type() {
+  register_post_type('expert',
+    array(
+      'rewrite' => array('slug' => 'expert'),
+      'labels' => array(
+        'name' => 'Experts',
+        'singular_name' => 'Expert',
+        'add_new_item' => 'Add New Expert',
+        'edit_item' => 'Edit Expert'
+      ),
+      'menu_icon' => 'dashicons-groups',
+      'public' => true,
+      'has_archive' => false,
+      'show_in_rest' => true,
+      'supports' => array(
+        'title', 'thumbnail', 'editor', 'excerpt'
+      )
+    )
+  );
+}
+
 function set_posts_per_page( $query ) {
   if ( ($query->is_search() || $query->is_archive()) && !is_page('media') && !is_page('the-arctic-this-week-newsletter') ) {
     $query->set( 'posts_per_page', 10 );
+  }
+  if (is_page('experts')) {
+    $query->set( 'posts_per_page', -1 );
   }
 }
 
@@ -106,5 +130,6 @@ add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'enqueue_script' );
 add_action( 'init', 'setup_menus' );
 add_action( 'init', 'event_post_type' );
+add_action( 'init', 'expert_post_type' );
 add_action( 'widgets_init', 'widget_areas' );
 add_action( 'pre_get_posts',  'set_posts_per_page'  );

@@ -1,12 +1,16 @@
 const expertGrid = document.querySelector('.expert-grid');
-let experts = 20;
 
 if (expertGrid) {
-  limitVisibleExperts(experts)
-  
-  document.querySelector('.load-more').addEventListener('click', () => {
-    experts += 10;
-    limitVisibleExperts(experts)
+  let experts = 8;
+  window.addEventListener('beforeunload', () => {window.scroll(0,0)})
+  limitVisibleExperts(experts);
+  let scrollUpperLimit = window.innerHeight * .2;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > scrollUpperLimit) {
+      experts += experts;
+      limitVisibleExperts(experts);
+      scrollUpperLimit += (window.innerHeight * .2);
+    }
   });
 }
 
