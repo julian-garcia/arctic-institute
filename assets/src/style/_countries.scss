@@ -44,6 +44,10 @@
   .wp-block-group__inner-container {
     @apply grid grid-cols-1 gap-x-8 gap-y-20 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 max-w-4xl lg:mx-auto mx-0;
   }
+
+  a {
+    @apply no-underline;
+  }
 }
 
 .country {
@@ -94,6 +98,24 @@
     hr {
       max-width: 100px;
       @apply border-t-2 mx-0 my-4 border-red;
+    }
+  }
+}
+
+.country-content {
+  a {
+    @apply text-blue ;
+  }
+  & .recent-posts a {
+    min-height: 60px;
+    @apply text-blue block clear-both mb-8 mt-4;
+  }
+  ul {
+    @apply list-disc;
+    li {
+      &::before, &:not(.active)::after {
+        content: none;
+      }
     }
   }
 }

@@ -174,7 +174,7 @@
       &:not(.active)::after {
         content: '';
         background-image: url(../images/arrow.svg);
-        @apply absolute w-6 h-5 ml-4 top-1 bg-no-repeat bg-contain;
+        @apply absolute w-6 h-5 ml-4 top-1.5 bg-no-repeat bg-contain;
       }
       &.active::before {
         content: '';
