@@ -31,15 +31,16 @@
 <div class="section dark z-10 curve-after">
   <div class="cards md:-mt-24 z-10">
     <?php 
-    $recent_posts = wp_get_recent_posts(array(
-      'numberposts' => 6, 
-      'post_status' => 'publish'
+    $recent_posts = new WP_Query(array( 
+      'post_type' => 'post', 
+      'posts_per_page' => 6,
+      'category__not_in' => array( 467, 557, 559 )
     ));
-    foreach( $recent_posts as $post_item ) : 
-      $post = get_post( $post_item['ID'] ); setup_postdata( $post );?>
+    while($recent_posts->have_posts() ):
+      $recent_posts->the_post(); ?>
       <div class="card">
         <a class="link" href="<?php the_permalink(); ?>"></a>
-        <?php echo get_the_post_thumbnail($post_item['ID'], 'medium'); ?>
+        <?php echo get_the_post_thumbnail(get_the_ID(), 'medium'); ?>
         <div class="tags">
           <?php the_tags('<span>', ', </span> <span>','</span>'); ?>
         </div>
@@ -53,15 +54,15 @@
         } ?>
         </p>
         <p class="category"><?php 
-          foreach(wp_get_post_categories( $post_item['ID'] ) as $c){
+          foreach(wp_get_post_categories( get_the_ID() ) as $c){
             $cat = get_category( $c );
             echo '<a href="/category/' . $cat->slug . '">' . $cat->name . '</a>';
           } 
           ?>
         </p>
       </div>
-      <?php wp_reset_postdata(); ?>
-    <?php endforeach; ?>
+    <?php endwhile; ?>
+    <?php wp_reset_postdata(); ?>
   </div>
   <div class="text-center mt-5 p-3 flex justify-center gap-8">
     <a href="/publications" class="button blue">VIEW ALL PUBLICATIONS</a>

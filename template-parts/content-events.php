@@ -33,7 +33,10 @@
           ?>
         </p>
         <p class="title"><?php the_title(); ?></p>
-        <p><?php the_excerpt(); ?></p>
+        <p>
+          <?php $excerpt = substr( get_the_excerpt(), 0, 80 ); 
+          echo substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );?>
+        </p>
         <a class="more" href="<?php the_permalink(); ?>">READ MORE</a>
       </div>
       <?php wp_reset_postdata(); ?>

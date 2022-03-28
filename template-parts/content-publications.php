@@ -5,7 +5,11 @@
     <p class="text-2xl text-white max-w-3xl mt-3"><?php echo $headline ?></p>
   </div>
 </div>
+<div class="max-w-6xl mx-auto px-4">
+  <?php the_content(); ?>
+</div>
 <?php if ($_GET['type']) { $_POST['type'] = $_GET['type']; } ?>
+<?php if ($_GET['topic']) { $_POST['topic'] = $_GET['topic']; } ?>
 <form action="/publications" method="post" class="filters">
   <h2>Filter By</h2>
   <div class="sm:flex gap-6 items-end flex-wrap">
@@ -73,7 +77,7 @@
     <input type="submit" name="submit" value="Apply Filters" class="button blue no-margin" />
   </div>
 </form>
-<div class="publications masonry">
+<div id="publications" class="publications masonry">
   <?php
     $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
@@ -144,7 +148,7 @@
 
 <div class="section mid curve-before mt-24">
   <h2 class="text-white text-3xl font-sans text-center">From the Archives</h2>
-  <div class="publications less-spacing">
+  <div class="publications masonry-archive less-spacing">
     <?php for ($i = 1; $i <= 3; $i++): 
       if ($i === 1 && $post_1) { 
         $post = get_post( $post_1['post']->ID ); 
@@ -189,7 +193,7 @@
       }
     ?>
     <?php if( $post ): setup_postdata( $post ); $cats = get_the_category();  ?>
-    <div class="publication-card no-shadow">
+    <div class="publication-card card no-shadow">
       <h3 class="archive-heading">
         <?php echo $heading ?>
       </h3>

@@ -60,6 +60,7 @@ h4 {
 p {
   @apply mb-4 font-sans text-blue-dark max-w-4xl text-current text-lg;
   &.white { @apply text-white; }
+  &.has-text-align-center { @apply mx-auto }
 }
 
 a {

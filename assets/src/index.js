@@ -15,8 +15,12 @@ if ( window.history.replaceState ) {
   window.history.replaceState( null, null, window.location.href );
 }
 
-document.addEventListener('DOMContentLoaded', () => applyMasonrySpacing('load'));
-window.addEventListener('resize', () => {
-  applyMasonrySpacing('resize');
-  hideSearch();
+document.addEventListener('DOMContentLoaded', () => applyMasonrySpacing());
+window.addEventListener('resize', () => { hideSearch(); });
+
+document.querySelector('.publication-types').addEventListener('click', (e) => {
+  document.querySelectorAll('.publication-types .type-text')
+    .forEach(type => type.style.display = "none");
+  const pubTypeElement = document.querySelector('.publication-types .' + e.target.textContent.replace(/\s/g, '-'));
+  pubTypeElement.style.display = "block";
 });

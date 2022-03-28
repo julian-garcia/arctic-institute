@@ -1,12 +1,25 @@
 .experts {
-  @apply max-w-5xl mx-auto -mt-12 relative bg-white p-8 pb-20;
+  @apply max-w-5xl mx-auto -mt-12 relative bg-white p-2 pb-20 md:p-8;
 
   .expert-grid > .wp-block-group__inner-container {
-    @apply grid grid-cols-1 gap-4 xs:grid-cols-2 sm:grid-cols-2 sm:gap-10 md:grid-cols-3 md:gap-10 lg:grid-cols-4 lg:gap-8;
+    @apply grid grid-cols-1 gap-2 xs:grid-cols-2 sm:gap-10 md:grid-cols-3 md:gap-10 lg:grid-cols-4 lg:gap-8;
 
     .wp-block-image {
       max-width: 230px;
       @apply my-0 mx-auto;
+
+      img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .photo {
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
     }
   }
 
@@ -25,6 +38,14 @@
 
 .expert {
   @apply bg-white sm:mx-auto max-w-5xl px-4 py-8 -mt-12 relative;
+
+  .photo {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
 }
 
 .science-experts {

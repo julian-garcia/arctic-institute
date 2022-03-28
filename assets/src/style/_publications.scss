@@ -28,7 +28,7 @@
 }
 
 .publications {
-  @apply max-w-6xl mx-auto flex flex-wrap gap-8 my-24 px-4;
+  @apply max-w-6xl mx-auto my-24 px-4;
 
   &.less-spacing {
     @apply mt-8;
@@ -39,9 +39,9 @@
   }
   
   & .publication-card {
-    flex-basis: 100%;
+    width: 330px;
     box-shadow: 0px 2px 8px 1px rgba(51,51,51,0.1);
-    @apply h-full relative;
+    @apply mb-8;
 
     >*:not(img):not(hr), .bg-white>*:not(img) {
       @apply px-4 py-4 m-0;
@@ -73,14 +73,6 @@
 
     .archive-heading {
       @apply text-white text-center lg:h-24 font-sans;
-    }
-
-    @screen sm {
-      flex-basis: calc(50% - 18px);
-    }
-  
-    @screen lg {
-      flex-basis: calc(33% - 18px);
     }
   }
 }
@@ -121,6 +113,22 @@
     }
     &.dots {
       @apply mx-0;
+    }
+  }
+}
+
+.publication-types {
+  max-width: 700px;
+  .button {
+    margin-top: 0;
+  }
+  .type-text {
+    display: none;
+    
+    @apply border-blue border-4 p-4 text-xl;
+
+    span {
+      @apply text-3xl underline text-blue;
     }
   }
 }

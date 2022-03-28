@@ -6,7 +6,6 @@
     <?php 
       $experts = new WP_Query(array(
         'post_type' => 'expert',
-        // 'posts_per_page' => '-1',
         'meta_query'  => array(
           'featured_clause' => array(
               'key' => 'sequence',
@@ -20,12 +19,14 @@
     ?>
       <div class="wp-block-group">
         <div class="wp-block-group__inner-container">
-          <div class="wp-block-image">
+          <div class="wp-block-image is-style-rounded">
             <figure class="aligncenter size-full">
               <a href="<?php the_permalink(); ?>">
-              <img src="<?php the_post_thumbnail_url('medium') ?>" alt=""></a>
+              <div class="photo" style="background-image: url(<?php the_post_thumbnail_url('medium') ?>)"></div>
               <figcaption>
-                <a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?><br><?php echo get_the_excerpt(); ?></a>
+                <a href="<?php the_permalink(); ?>">
+                  <?php echo get_the_title(); ?><br><?php echo get_the_excerpt(); ?>
+                </a>
               </figcaption>
             </figure>
           </div>

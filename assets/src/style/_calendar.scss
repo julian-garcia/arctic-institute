@@ -1,6 +1,6 @@
 .content {
   .calendar-container {
-    @apply bg-white max-w-5xl md:mx-auto mx-4 p-3 relative mt-8 hidden md:block;
+    @apply bg-white max-w-5xl md:mx-auto mx-4 p-3 relative mt-8 mb-8 hidden md:block;
 
     .calendar {
       border-spacing: 4px;

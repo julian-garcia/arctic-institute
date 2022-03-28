@@ -26,7 +26,7 @@
               $categories = get_the_category();
               foreach($categories as $c){
                 $cat = get_category( $c );
-                if (!in_array($cat->name, $cats)) {
+                if (!in_array('<a href="/category/' . $cat->slug . '">' . $cat->name . '</a>', $cats)) {
                   array_push($cats, '<a href="/category/' . $cat->slug . '">' . $cat->name . '</a>');
                 }
               }
