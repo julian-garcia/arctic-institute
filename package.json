@@ -34,7 +34,5 @@
     "webpack-merge": "^5.8.0"
   },
   "private": true,
-  "dependencies": {
-    "masonry-layout": "^4.2.2"
-  }
+  "dependencies": {}
 }

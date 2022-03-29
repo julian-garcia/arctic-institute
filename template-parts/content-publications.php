@@ -148,7 +148,7 @@
 
 <div class="section mid curve-before mt-24">
   <h2 class="text-white text-3xl font-sans text-center">From the Archives</h2>
-  <div class="publications masonry-archive less-spacing">
+  <div class="cards less-spacing archives">
     <?php for ($i = 1; $i <= 3; $i++): 
       if ($i === 1 && $post_1) { 
         $post = get_post( $post_1['post']->ID ); 
@@ -193,17 +193,14 @@
       }
     ?>
     <?php if( $post ): setup_postdata( $post ); $cats = get_the_category();  ?>
-    <div class="publication-card card no-shadow">
+    <div class="card no-shadow">
       <h3 class="archive-heading">
         <?php echo $heading ?>
       </h3>
       <hr class="<?php echo $hr_class; ?>">
       <div class="bg-white">
-        <a href="<?php the_permalink() ?>">
-          <img src=<?php the_post_thumbnail_url('medium') ?> alt="" class="w-full">
-        </a>
         <div class="tags"> <?php the_tags('<span>', ', </span> <span>','</span>'); ?> </div>
-        <a class="date" href="<?php the_permalink() ?>"><?php echo get_the_date( 'F j, Y' ) ?></a>
+        <a class="date" href="<?php the_permalink() ?>"><?php echo get_the_date( 'F j, Y' ) ?></a><br>
         <a class="title" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
         <p class="author"><?php echo 'By:'; ?> 
           <?php if ( function_exists( 'coauthors_posts_links' ) ) {
