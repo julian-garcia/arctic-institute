@@ -32,6 +32,13 @@
       @apply text-sm text-left mt-3;
     }
 
+    img {
+      height: auto;
+      width: auto;
+      max-width: 100%;
+      max-height: 300px;
+    }
+
     .back {
       @apply text-blue no-underline relative block mb-8 ml-6;
       &:before {

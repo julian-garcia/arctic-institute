@@ -23,11 +23,11 @@
             echo '<strong>Research Topics:</strong> ';
             while($post_query->have_posts() ) { 
               $post_query->the_post();
-              $categories = get_the_category();
-              foreach($categories as $c){
-                $cat = get_category( $c );
-                if (!in_array('<a href="/category/' . $cat->slug . '">' . $cat->name . '</a>', $cats)) {
-                  array_push($cats, '<a href="/category/' . $cat->slug . '">' . $cat->name . '</a>');
+              $tags = get_the_tags();
+              foreach($tags as $c){
+                $cat = get_tag( $c );
+                if (!in_array('<a href="/tag/' . $cat->slug . '">' . $cat->name . '</a>', $cats)) {
+                  array_push($cats, '<a href="/tag/' . $cat->slug . '">' . $cat->name . '</a>');
                 }
               }
             }

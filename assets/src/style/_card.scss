@@ -26,11 +26,12 @@
     }
 
     .tags {
+      line-height: 1.2;
       @apply text-blue uppercase text-base font-black mb-4 mt-4 relative;
-      line-height: 23px;
     }
   
     .author {
+      line-height: 1.2;
       @apply mb-6 relative text-base text-blue-dark;
     }
   
@@ -39,7 +40,7 @@
     }
 
     .title {
-      line-height: 30px;
+      line-height: 1.2;
       @apply mt-2 font-serif text-lg font-bold mb-1 text-blue-dark;
     }
 

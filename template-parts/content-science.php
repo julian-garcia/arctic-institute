@@ -15,7 +15,7 @@
         'tag' => array(get_field('topic')->slug)
       )), 0, 3);
     ?>
-    <div class="publications less-spacing no-bottom-spacing">
+    <div class="publications row less-spacing no-bottom-spacing">
       <?php 
       foreach( $post_query as $post_item ) : 
         $post = get_post( $post_item['ID'] ); 
