@@ -6,11 +6,8 @@
      </div>
 </div>
 <div class="content">
-  <div class="section">
-    <h2 class="heading text-center">Upcoming Events</h2>
-    <div class="cards events">
-    <?php 
-    $recent_posts = wp_get_recent_posts(array(
+  <?php 
+    $past_events = wp_get_recent_posts(array(
       'numberposts' => 6, 
       'post_status' => 'publish',
       'post_type'   => 'event',
@@ -18,11 +15,39 @@
         'featured_clause' => array(
             'key' => 'date',
             'compare' => 'EXISTS'
+        ),
+        array(
+            'key' => 'date',
+            'value'   => date("Ymd"),
+            'compare' => '<'
         )
       ),
       'orderby' => array( 'featured_clause' => 'DESC' )
     ));
-    foreach( $recent_posts as $post_item ) : 
+    $upcoming_events = wp_get_recent_posts(array(
+      'numberposts' => 6, 
+      'post_status' => 'publish',
+      'post_type'   => 'event',
+      'meta_query'  => array(
+        'featured_clause' => array(
+            'key' => 'date',
+            'compare' => 'EXISTS'
+        ),
+        array(
+            'key' => 'date',
+            'value'   => date("Ymd"),
+            'compare' => '>='
+        )
+      ),
+      'orderby' => array( 'featured_clause' => 'DESC' )
+    ));
+  ?>
+  <?php if ($upcoming_events): ?>
+  <div class="section no-pad-bottom">
+    <h2 class="heading text-center">Upcoming Events</h2>
+    <div class="cards events">
+    <?php 
+    foreach( $upcoming_events as $post_item ) : 
       $post = get_post( $post_item['ID'] ); setup_postdata( $post );?>
       <div class="card">
         <a class="link" href="<?php the_permalink(); ?>"></a>
@@ -33,7 +58,7 @@
           ?>
         </p>
         <p class="title"><?php the_title(); ?></p>
-        <p>
+        <p class="excerpt">
           <?php $excerpt = substr( get_the_excerpt(), 0, 80 ); 
           echo substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );?>
         </p>
@@ -43,6 +68,36 @@
     <?php endforeach; ?>
     </div>
   </div>
+  <?php endif; ?>
+
+  <?php if ($past_events): ?>
+  <div class="section no-pad-top">
+    <h2 class="heading text-center">Past Events</h2>
+    <div class="cards events">
+    <?php 
+    foreach( $past_events as $post_item ) : 
+      $post = get_post( $post_item['ID'] ); setup_postdata( $post );?>
+      <div class="card">
+        <a class="link" href="<?php the_permalink(); ?>"></a>
+        <?php echo get_the_post_thumbnail($post_item['ID'], 'medium'); ?>
+        <p class="date mt-4">
+          <?php 
+            echo date_format(date_create(get_field('date')), 'D M j, Y'); 
+          ?>
+        </p>
+        <p class="title"><?php the_title(); ?></p>
+        <p class="excerpt">
+          <?php $excerpt = substr( get_the_excerpt(), 0, 80 ); 
+          echo substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );?>
+        </p>
+        <a class="more" href="<?php the_permalink(); ?>">READ MORE</a>
+      </div>
+      <?php wp_reset_postdata(); ?>
+    <?php endforeach; ?>
+    </div>
+  </div>
+  <?php endif; ?>
+
   <div class="my-8">
     <?php the_content(); ?>
   </div>

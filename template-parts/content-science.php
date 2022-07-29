@@ -6,7 +6,8 @@
      </div>
 </div>
 <div class="content">
-  <div class="section">
+  <div class="section limit">
+    <a class="back" href="/science-backgrounders">Back to Science Backgrounders</a>
     <h2 class="heading text-center">Latest Analysis </h2>
     <?php
       $post_query = array_slice(wp_get_recent_posts(array( 
@@ -47,5 +48,30 @@
       <?php wp_reset_postdata(); endforeach; ?>
     </div>
   </div>
+  <?php if (get_field('experts')): ?>
+  <div class="section mid full-width mt-8">
+    <h2 class="heading text-center white">Experts</h2>
+    <div class="wp-container wp-block-group">
+      <div class="wp-block-group__inner-container">
+        <?php   $post_objects = get_field('experts'); if( $post_objects ): ?>
+        <div class="wp-block-columns science-experts">
+          <?php foreach( $post_objects as $post_object): ?>
+            <div class="wp-block-column">
+              <div class="science-expert" style="background-image: url(<?php echo get_the_post_thumbnail_url( $post_object->ID, 'medium' );?>)">
+                <p>
+                  <a href="<?php echo get_permalink($post_object->ID); ?>">
+                    <?php echo get_the_title($post_object->ID); ?>
+                  </a>
+                </p>
+                <a href="<?php echo get_permalink($post_object->ID); ?>"></a>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        </div>
+        <?php endif;?>
+      </div>
+    </div>
+  </div>
+  <?php endif; ?>
   <?php the_content(); ?>
 </div>

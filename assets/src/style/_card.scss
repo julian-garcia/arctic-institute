@@ -68,6 +68,10 @@
       @screen md {
         width: calc(33% - 22px);
       }
+
+      .excerpt {
+        @apply text-base;
+      }
     }
   }
 }

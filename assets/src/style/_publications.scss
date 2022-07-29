@@ -28,20 +28,7 @@
 }
 
 .publications {
-  @apply max-w-6xl mx-auto my-24 px-4 flex flex-row lg:flex-col flex-wrap align-middle justify-start w-full gap-8;
-
-  @screen lg {
-    max-height: 2300px;
-  }
-
-  &.row {
-    max-height: unset;
-    @apply lg:flex-row;
-
-    .publication-card {
-      max-height: unset;
-    }
-  }
+  @apply max-w-6xl mx-auto my-24 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-8;
 
   &.less-spacing {
     @apply mt-8;
@@ -53,15 +40,6 @@
   
   & .publication-card {
     box-shadow: 0px 2px 8px 1px rgba(51,51,51,0.1);
-
-    @screen sm {
-      width: calc(50% - 1rem);
-    }
-
-    @screen lg {
-      width: calc(33% - 22px);
-      max-height: 550px;
-    }
 
     >*:not(img):not(hr), .bg-white>*:not(img) {
       @apply px-4 py-4 m-0;
@@ -76,8 +54,7 @@
     }
 
     &>a:first-of-type {
-      @apply p-0 block;
-      max-height: 180px;
+      @apply p-0 block h-40 w-full bg-no-repeat bg-contain bg-center;
       overflow: hidden;
     }
 

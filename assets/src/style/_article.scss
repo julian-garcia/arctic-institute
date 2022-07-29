@@ -36,7 +36,18 @@
       height: auto;
       width: auto;
       max-width: 100%;
-      max-height: 300px;
+    }
+
+    ul {
+      @apply list-disc ml-4;
+
+      li {
+        @apply mb-4 text-lg;
+      }
+    }
+
+    .wp-block-embed iframe {
+      width: 100% !important;
     }
 
     .back {
@@ -146,6 +157,9 @@
   }
 
   .event {
-    img {max-width: 400px; @apply my-4; }
+    img {max-width: 100%; @apply my-4; }
+    ul {
+      @apply list-disc ml-4 text-lg;
+    }
   }
 }

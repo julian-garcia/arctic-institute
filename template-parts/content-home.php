@@ -1,8 +1,20 @@
+<?php 
+  $homepageFeature = get_the_post_thumbnail_url();
+  $last_post = new WP_Query(array( 
+    'post_type' => 'post', 
+    'posts_per_page' => 1,
+    'category__not_in' => array( 467, 559 )
+  ));
+  while($last_post->have_posts() ): $last_post->the_post(); ?>
+<?php if(get_the_post_thumbnail_url()): ?>
 <div class="home-feature-image" 
      style="background-image: url(<?php the_post_thumbnail_url() ?>)">
 </div>
-
-<?php if( $headline_article ): $post = get_post( $headline_article->ID ); setup_postdata( $post );  ?>
+<?php else: ?>
+<div class="home-feature-image" 
+     style="background-image: url(<?php echo $homepageFeature ?>)">
+</div>
+<?php endif; ?>
 <div class="headline-article">
   <a href="<?php the_permalink(); ?>" class="headline-link"></a>
   <div class="tags">
@@ -18,7 +30,7 @@
   </p>
   <p class="text-lg mb-6"><?php echo get_the_excerpt() ?></p>
   <p class="date"><?php 
-    foreach(wp_get_post_categories( $headline_article->ID ) as $c){
+    foreach(wp_get_post_categories( get_the_ID() ) as $c){
       $cat = get_category( $c );
       echo '<a href="/category/' . $cat->slug . '">' . $cat->name . '</a>';
     } 
@@ -26,7 +38,7 @@
   ?></p>
 </div>
 <?php wp_reset_postdata(); ?>
-<?php endif; ?>
+<?php endwhile; ?>
 
 <div class="section dark z-10 curve-after">
   <div class="cards md:-mt-24 z-10">
@@ -34,7 +46,8 @@
     $recent_posts = new WP_Query(array( 
       'post_type' => 'post', 
       'posts_per_page' => 6,
-      'category__not_in' => array( 467, 557, 559 )
+      'category__not_in' => array( 467, 559 ),
+      'offset' => 1
     ));
     while($recent_posts->have_posts() ):
       $recent_posts->the_post(); ?>

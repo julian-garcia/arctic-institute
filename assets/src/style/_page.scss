@@ -35,6 +35,12 @@
   a {
     @apply text-blue underline;
   }
+  .md-hidden {
+    @apply md:hidden;
+  }
+  .md-flex {
+    @apply hidden md:flex;
+  }
 }
 
 .back {

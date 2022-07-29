@@ -36,7 +36,7 @@
   }
 
   .calendar-list {
-    @apply block text-center md:hidden;
+    @apply block text-center md:hidden mb-12;
 
     .list-event {
       @apply text-white text-xl no-underline mb-4 block;

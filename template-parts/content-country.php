@@ -142,14 +142,14 @@
           <div class="wp-block-columns science-experts">
             <?php foreach( $post_objects as $post_object): ?>
               <div class="wp-block-column">
-                <figure class="wp-block-image science-expert">
-                  <a href="<?php echo get_permalink($post_object->ID); ?>">
-                  <img src="<?php echo get_the_post_thumbnail_url( $post_object->ID, 'medium' );?>" alt="">
+                <div class="science-expert" style="background-image: url(<?php echo get_the_post_thumbnail_url( $post_object->ID, 'medium' );?>)">
                   <p class="text-blue text-center mt-4">
-                    <?php echo get_the_title($post_object->ID); ?>
+                    <a href="<?php echo get_permalink($post_object->ID); ?>">
+                      <?php echo get_the_title($post_object->ID); ?>
+                    </a>
                   </p>
-                  </a>
-                </figure>
+                  <a href="<?php echo get_permalink($post_object->ID); ?>"></a>
+                </div>
               </div>
             <?php endforeach; ?>
           </div>

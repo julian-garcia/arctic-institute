@@ -46,12 +46,46 @@
     height: 200px;
     border-radius: 50%;
   }
+
+  &-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
+    @screen md {
+      width: 250px;
+      height: 250px;
+    }
+
+    @screen lg {
+      width: 300px;
+      height: 300px;
+    }
+  }
 }
 
 .science-experts {
-  .content .section & .wp-block-column {
+  .country-content &.wp-block-columns .wp-block-column {
+    flex-basis: auto !important;
     @apply ml-0;
   }
+  .science-expert {
+    border-radius: 50%;
+    @apply bg-no-repeat bg-cover w-44 h-44 relative mx-auto mb-16;
+
+    p {
+      @apply absolute -bottom-12 h-6 w-full text-white text-center mt-4;
+    }
+
+    a {
+      @apply absolute h-full w-full top-0 left-0 text-white no-underline;
+    }
+  }
+}
+
+.science-bg-experts {
   .science-expert {
     img {
       width: 100%;

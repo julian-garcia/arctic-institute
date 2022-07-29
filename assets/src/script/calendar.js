@@ -41,7 +41,11 @@ function renderCalendarMonth() {
         events.forEach(event => {
           const eventDate = new Date(event.date);
           const calDate = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), weeksDays[j][i]);
-          if (eventDate.getTime() == calDate.getTime()) {
+          if (
+            eventDate.getDate() == calDate.getDate() &&
+            eventDate.getMonth() == calDate.getMonth() &&
+            eventDate.getFullYear() == calDate.getFullYear()
+          ) {
             cell.innerHTML += `<a class="px-2 text-center block" href="${event.link}">${event.title}</a>`;
           }
         });

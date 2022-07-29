@@ -8,8 +8,10 @@
 <div class="max-w-6xl mx-auto px-4">
   <?php the_content(); ?>
 </div>
+
 <?php if ($_GET['type']) { $_POST['type'] = $_GET['type']; } ?>
 <?php if ($_GET['topic']) { $_POST['topic'] = $_GET['topic']; } ?>
+
 <form action="/publications" method="post" class="filters">
   <h2>Filter By</h2>
   <div class="sm:flex gap-6 items-end flex-wrap">
@@ -81,12 +83,13 @@
   <?php
     $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
-    if($_POST['type'] || $_POST['topic'] || $_POST['country']) {
+    if($_POST['type'] || $_POST['topic'] || $_POST['country'] ) {
       if (!$_POST['topic'] && !$_POST['country']) {
         $slugs = array();
       } else {
         $slugs = array($_POST['topic'], $_POST['country']);
       }
+
       $post_query = new WP_Query(array( 
         'post_type' => 'post', 
         'posts_per_page' => 12,
@@ -105,9 +108,7 @@
     if($post_query->have_posts() ) : 
       while($post_query->have_posts() ) : $post_query->the_post(); $cats = get_the_category(); ?>
         <div class="publication-card card">
-          <a href="<?php the_permalink() ?>">
-            <img src=<?php the_post_thumbnail_url('medium') ?> alt="" class="w-full">
-          </a>
+          <a href="<?php the_permalink() ?>" style="background-image: url(<?php the_post_thumbnail_url('medium') ?>)"></a>
           <div class="tags"> <?php the_tags('<span>', ', </span> <span>','</span>'); ?> </div>
           <a class="date" href="<?php the_permalink() ?>"><?php echo get_the_date( 'F j, Y' ) ?></a>
           <a class="title" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
