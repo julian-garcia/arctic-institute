@@ -43,6 +43,8 @@
       <i class="fab fa-brands fa-twitter"></i>
     </a>
   </div>
-  <?php the_post_thumbnail(); ?>
+  <div class="feature <?php echo get_field('small_feature') ? "small" : "" ?>">
+    <?php the_post_thumbnail(); ?>
+  </div>
   <?php the_content(); ?>
 </div>

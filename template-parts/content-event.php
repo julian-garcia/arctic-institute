@@ -3,6 +3,9 @@
 <div class="event">
   <h3>
     <?php echo date_format(date_create($date), 'l F jS, Y');  ?>
+    <?php if (get_field('until')) {
+      echo ' to <br>' . date_format(date_create(get_field('until')), 'l F jS, Y'); 
+    }?>
     <?php if (get_field('time')): ?>
     <span><?php echo " at " . get_field('time') ?></span>
     <?php endif; ?>

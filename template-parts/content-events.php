@@ -7,8 +7,9 @@
 </div>
 <div class="content">
   <?php 
-    $past_events = wp_get_recent_posts(array(
-      'numberposts' => 6, 
+    $paged = ( get_query_var('paged') ) ? get_query_var( 'paged' ) : 1;
+    $past_events = new WP_Query(array(
+      'posts_per_page' => 6, 
       'post_status' => 'publish',
       'post_type'   => 'event',
       'meta_query'  => array(
@@ -22,7 +23,8 @@
             'compare' => '<'
         )
       ),
-      'orderby' => array( 'featured_clause' => 'DESC' )
+      'orderby' => array( 'featured_clause' => 'DESC' ),
+      'paged' => $paged
     ));
     $upcoming_events = wp_get_recent_posts(array(
       'numberposts' => 6, 
@@ -56,6 +58,9 @@
           <?php 
             echo date_format(date_create(get_field('date')), 'D M j, Y'); 
           ?>
+          <?php if (get_field('until')) {
+            echo ' to <br>' . date_format(date_create(get_field('until')), 'D M j, Y'); 
+          }?>
         </p>
         <p class="title"><?php the_title(); ?></p>
         <p class="excerpt">
@@ -71,19 +76,23 @@
   <?php endif; ?>
 
   <?php if ($past_events): ?>
-  <div class="section no-pad-top">
+  <div class="section no-pad-top" id="pastEvents">
     <h2 class="heading text-center">Past Events</h2>
     <div class="cards events">
     <?php 
-    foreach( $past_events as $post_item ) : 
-      $post = get_post( $post_item['ID'] ); setup_postdata( $post );?>
+    if ($past_events -> have_posts()): 
+    while( $past_events -> have_posts() ) :
+      $past_events->the_post(); ?>
       <div class="card">
         <a class="link" href="<?php the_permalink(); ?>"></a>
-        <?php echo get_the_post_thumbnail($post_item['ID'], 'medium'); ?>
+        <?php echo get_the_post_thumbnail( get_the_ID(), 'medium'); ?>
         <p class="date mt-4">
           <?php 
             echo date_format(date_create(get_field('date')), 'D M j, Y'); 
           ?>
+          <?php if (get_field('until')) {
+            echo ' to <br>' . date_format(date_create(get_field('until')), 'D M j, Y'); 
+          }?>
         </p>
         <p class="title"><?php the_title(); ?></p>
         <p class="excerpt">
@@ -92,11 +101,23 @@
         </p>
         <a class="more" href="<?php the_permalink(); ?>">READ MORE</a>
       </div>
-      <?php wp_reset_postdata(); ?>
-    <?php endforeach; ?>
+    <?php endwhile;  ?>
     </div>
+    <div class="pagination">
+      <?php
+        echo paginate_links( array(
+          'base' => str_replace( 999999, '%#%', esc_url( get_pagenum_link( 999999 ) ) ),
+          'format' => '?paged=%#%',
+          'current' => max( 1, get_query_var('paged') ),
+          'total' => $past_events->max_num_pages,
+          'prev_text' => '',
+          'next_text' => '',
+          'add_fragment' => '#pastEvents'
+        )); ?>
+    </div>
+    <?php endif; ?>
   </div>
-  <?php endif; ?>
+  <?php endif; wp_reset_query(); ?>
 
   <div class="my-8">
     <?php the_content(); ?>
@@ -150,7 +171,7 @@
   </div>
 </div>
 <?php
-    $event_posts = new WP_Query(array('post_type' => 'event'));
+    $event_posts = new WP_Query(array('post_type' => 'event', 'posts_per_page' => '30'));
     echo '<script>var events = [];';
     while($event_posts->have_posts() ) {
       $event_posts->the_post(); 
@@ -158,7 +179,8 @@
                          link:"', the_permalink(),'", 
                          image:"', get_the_post_thumbnail_url(get_the_ID(), 'full'),'",
                          time:"', the_field('time'),'", 
-                         date:"', the_field('date'),'"});';
+                         date:"', the_field('date'),'",
+                         until:"', the_field('until'),'"});';
     }
     wp_reset_postdata(); 
     echo '</script>';

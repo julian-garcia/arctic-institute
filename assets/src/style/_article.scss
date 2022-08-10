@@ -13,6 +13,15 @@
     @apply md:grid grid-cols-6 gap-16;
   }
 
+  .feature {
+    &.small {
+      @apply max-w-xs mb-8;
+    }
+    + p {
+      @apply text-sm text-right;
+    }
+  }
+
   .the-article {
     @apply col-span-4;
 
@@ -43,6 +52,13 @@
 
       li {
         @apply mb-4 text-lg;
+      }
+    }
+
+    ol {
+      @apply list-decimal ml-5 mt-2 mb-5;
+      li {
+        @apply mb-2 text-lg;
       }
     }
 
@@ -159,7 +175,7 @@
   .event {
     img {max-width: 100%; @apply my-4; }
     ul {
-      @apply list-disc ml-4 text-lg;
+      @apply list-disc ml-4 text-lg mb-4 text-blue-dark;
     }
   }
 }

@@ -31,7 +31,7 @@ function renderCalendarMonth() {
   
   let weeksDays = cal.monthDays(selectedDate.getFullYear(), selectedDate.getMonth());
   calendarBody.innerHTML = '';
-  
+
   for (let j = 0; j < weeksDays.length; j++) {
     const row = calendarBody.appendChild(document.createElement('tr'));
     for (let i = 0; i < weeksDays[j].length; i++) {
@@ -40,11 +40,16 @@ function renderCalendarMonth() {
         cell.innerHTML = `<h3 class="text-center">${weeksDays[j][i]}</h3>`;
         events.forEach(event => {
           const eventDate = new Date(event.date);
+          const eventUntilDate = new Date(event.until || event.date);
           const calDate = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), weeksDays[j][i]);
           if (
-            eventDate.getDate() == calDate.getDate() &&
-            eventDate.getMonth() == calDate.getMonth() &&
-            eventDate.getFullYear() == calDate.getFullYear()
+            (calDate.getDate() >= eventDate.getDate() &&
+              calDate.getMonth() >= eventDate.getMonth() &&
+              calDate.getFullYear() >= eventDate.getFullYear() 
+            ) &&
+            (calDate.getDate() <= eventUntilDate.getDate() &&
+            calDate.getMonth() <= eventUntilDate.getMonth() &&
+              calDate.getFullYear() <= eventUntilDate.getFullYear())
           ) {
             cell.innerHTML += `<a class="px-2 text-center block" href="${event.link}">${event.title}</a>`;
           }

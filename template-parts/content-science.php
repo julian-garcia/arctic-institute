@@ -59,7 +59,7 @@
             <div class="wp-block-column">
               <div class="science-expert" style="background-image: url(<?php echo get_the_post_thumbnail_url( $post_object->ID, 'medium' );?>)">
                 <p>
-                  <a href="<?php echo get_permalink($post_object->ID); ?>">
+                  <a class="white" href="<?php echo get_permalink($post_object->ID); ?>">
                     <?php echo get_the_title($post_object->ID); ?>
                   </a>
                 </p>

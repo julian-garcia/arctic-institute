@@ -77,7 +77,7 @@ function add_menu_class($classes, $item, $args) {
 function event_post_type() {
   register_post_type('event',
     array(
-      'rewrite' => array('slug' => 'events'),
+      'rewrite' => array('slug' => 'event'),
       'labels' => array(
         'name' => 'Events',
         'singular_name' => 'Event',
@@ -87,6 +87,7 @@ function event_post_type() {
       'menu_icon' => 'dashicons-calendar',
       'public' => true,
       'has_archive' => false,
+      'show_in_rest' => true,
       'supports' => array(
         'title', 'thumbnail', 'editor', 'excerpt'
       )
@@ -116,9 +117,9 @@ function expert_post_type() {
 }
 
 function set_posts_per_page( $query ) {
-  if ( ($query->is_search() || $query->is_archive()) && !is_page('media') && !is_page('the-arctic-this-week-newsletter') ) {
-    $query->set( 'posts_per_page', 10 );
-  }
+  // if ( ($query->is_search() || $query->is_archive()) && !is_page('media') && !is_page('the-arctic-this-week-newsletter') ) {
+  //   $query->set( 'posts_per_page', 10 );
+  // }
   if (is_page('experts')) {
     $query->set( 'posts_per_page', -1 );
   }

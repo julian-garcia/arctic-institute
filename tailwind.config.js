@@ -62,6 +62,7 @@ module.exports = {
     },
     screens: {
       'xs': '400px',
+      'mid': '1060px',
       ...defaultTheme.screens,
     },
   },

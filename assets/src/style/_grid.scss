@@ -19,7 +19,7 @@
 }
 
 .library {
-  @apply mb-16 px-6 md:px-0 ;
+  @apply mb-16 px-6 mid:px-0 ;
 
   > .wp-block-group__inner-container {
     @apply grid grid-cols-2 gap-8;
@@ -39,7 +39,7 @@
     @apply leading-none border-b border-grey-dark pb-20;
 
     > a {
-      @apply no-underline font-serif text-black text-lg relative;
+      @apply no-underline font-serif text-black text-lg relative inline-block;
 
       &::before {
         content: 'READ MORE';

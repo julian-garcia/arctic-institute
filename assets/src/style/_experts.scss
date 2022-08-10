@@ -80,7 +80,11 @@
     }
 
     a {
-      @apply absolute h-full w-full top-0 left-0 text-white no-underline;
+      @apply absolute h-full w-full top-0 left-0 text-blue no-underline;
+
+      &.white {
+        @apply text-white;
+      }
     }
   }
 }
