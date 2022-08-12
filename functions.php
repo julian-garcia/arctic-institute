@@ -117,14 +117,36 @@ function expert_post_type() {
 }
 
 function set_posts_per_page( $query ) {
-  // if ( ($query->is_search() || $query->is_archive()) && !is_page('media') && !is_page('the-arctic-this-week-newsletter') ) {
-  //   $query->set( 'posts_per_page', 10 );
-  // }
+  if ( ($query->is_search() || $query->is_archive()) && !is_page('media') && !is_page('the-arctic-this-week-newsletter') ) {
+    $query->set( 'posts_per_page', 10 );
+  }
   if (is_page('experts')) {
     $query->set( 'posts_per_page', -1 );
   }
 }
 
+function series_post_list() {
+  if (get_field('series_tag')) {
+    $post_query = new WP_Query(array( 
+      'post_type' => 'post', 
+      'posts_per_page' => -1,
+      'orderby' => 'date',
+      'order'   => 'ASC',
+      'nopaging' => true,
+      'tag_id' => get_field('series_tag')
+    ));
+    $titles = '<ul class="series">';
+    while($post_query->have_posts() ) {
+      $post_query->the_post();
+      $titles = $titles . '<li>' . '<a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+    }
+    $titles = $titles . '</ul>';
+    wp_reset_query();
+    return '<h2 class="heading">The Arctic Institute ' . get_tag(get_field('series_tag'))->name . '</h2>' . $titles;
+  }
+}
+
+add_shortcode( 'series', 'series_post_list' );
 add_filter( 'nav_menu_css_class', 'add_menu_class', 10, 4 );
 add_action( 'after_setup_theme', 'config_theme_support' );
 add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
