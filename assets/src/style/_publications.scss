@@ -107,7 +107,7 @@
         content: '';
         border-radius: 50%;
         z-index: -1;
-        @apply bg-blue w-10 h-10 -mt-1.5 mx-0 absolute -left-3.5 top-0;
+        @apply bg-blue w-10 h-10 -mt-1.5 mx-0 absolute top-0 left-1/2 -translate-x-1/2 transform;
       }
     }
     &.dots {
