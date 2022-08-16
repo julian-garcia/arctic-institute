@@ -12,5 +12,7 @@
   </h3>
   <?php the_post_thumbnail(); ?>
   <?php the_content(); ?>
+  <?php if ($link): ?>
   <a class="button blue" href="<?php echo $link ?>">Register</a>
+  <?php endif; ?>
 </div>

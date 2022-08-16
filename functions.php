@@ -90,7 +90,8 @@ function event_post_type() {
       'show_in_rest' => true,
       'supports' => array(
         'title', 'thumbnail', 'editor', 'excerpt'
-      )
+      ),
+      'taxonomies' => array('post_tag')
     )
   );
 }
