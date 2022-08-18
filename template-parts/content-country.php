@@ -5,6 +5,7 @@
   <div class="country-details">
     <h1 class="text-4xl"><?php wp_title(''); ?></h1>
     <div class="stats">
+      <a class="back" href="/country-backgrounders">Back to Country Backgrounders</a>
       <div>
         <h3 class="heading">Facts & Figures</h3>
         <p>AC member since <?php echo $ac_member ?></p>

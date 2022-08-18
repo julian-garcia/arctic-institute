@@ -70,7 +70,11 @@
 .country-feature { min-height: 400px; }
 
 .country-details {
-  @apply -mt-48 relative -mx-10 sm:mx-0;
+  @apply -mt-48 relative -mx-10 sm:mx-0 relative;
+
+  .back {
+    @apply absolute right-2 m-0 top-1 font-title;
+  }
 
   h1 {
     @screen sm {
@@ -80,7 +84,7 @@
   }
 
   .stats {
-    @apply bg-grey-light px-8 py-8 border-t-4 border-news grid grid-cols-1 gap-x-4;
+    @apply bg-grey-light px-8 py-8 border-t-4 border-news grid grid-cols-1 gap-x-4 relative;
 
     @screen md {
       @apply grid-cols-2 px-16;

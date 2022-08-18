@@ -101,3 +101,40 @@
     }
   }
 }
+
+.expert-topics {
+  @apply mt-1;
+  ul { max-width: 450px; @apply inline-block; }
+  li { @apply inline-block mr-2; }
+  li > a {
+    @apply relative pl-8 text-lg;
+    &::before {
+      content: '';
+      @apply absolute bg-blue bg-no-repeat bg-cover w-7 h-5 left-0 
+      top-1/2 transform -translate-y-1/2;
+    }
+  }
+  .alaska::before { background-image: url(../images/flags/alaska.svg); }
+  .belgium::before { background-image: url(../images/flags/belgium.svg); }
+  .canada::before { background-image: url(../images/flags/ca.svg); }
+  .china::before { background-image: url(../images/flags/cn.svg); }
+  .denmark-and-greenland::before { background-image: url(../images/flags/dk.svg); }
+  .european-union::before { background-image: url(../images/flags/eu.svg); }
+  .finland::before { background-image: url(../images/flags/fi.svg); }
+  .france::before { background-image: url(../images/flags/fr.svg); }
+  .germany::before { background-image: url(../images/flags/de.svg); }
+  .iceland::before { background-image: url(../images/flags/is.svg); }
+  .india::before { background-image: url(../images/flags/in.svg); }
+  .italy::before { background-image: url(../images/flags/it.svg); }
+  .japan::before { background-image: url(../images/flags/jp.svg); }
+  .netherlands::before { background-image: url(../images/flags/nl.svg); }
+  .norway::before { background-image: url(../images/flags/no.svg); }
+  .poland::before { background-image: url(../images/flags/pl.svg); }
+  .russia::before { background-image: url(../images/flags/ru.svg); }
+  .singapore::before { background-image: url(../images/flags/sg.svg); }
+  .south-korea::before { background-image: url(../images/flags/kr.svg); }
+  .spain::before { background-image: url(../images/flags/es.svg); }
+  .sweden::before { background-image: url(../images/flags/se.svg); }
+  .united-kingdom::before { background-image: url(../images/flags/gb.svg); }
+  .united-states::before { background-image: url(../images/flags/us.svg); }
+}

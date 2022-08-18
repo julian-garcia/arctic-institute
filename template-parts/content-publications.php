@@ -10,7 +10,14 @@
 </div>
 
 <?php if ($_GET['type']) { $_POST['type'] = $_GET['type']; } ?>
-<?php if ($_GET['topic']) { $_POST['topic'] = $_GET['topic']; } ?>
+<?php if ($_GET['country']) { $_POST['country'] = $_GET['country']; } ?>
+<?php if ($_GET['topic']) { 
+    $_POST['topic'] = $_GET['topic']; 
+    if (!$_POST['country']) {
+      $_POST['country'] = $_GET['topic']; 
+    }
+  } 
+?>
 
 <form action="/publications" method="post" class="filters">
   <h2>Filter By</h2>
