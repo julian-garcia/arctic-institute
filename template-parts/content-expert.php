@@ -22,13 +22,9 @@
         <p class="inline"><?php echo $working_location ?></p><br>
         <h4 class="heading no-margin inline">Languages:</h4> 
         <p class="inline"><?php echo $languages ?></p><br>
-        <?php if(get_field('research_topics')): ?>
-          <h4 class="heading no-margin inline">Research Topics:</h4>
-          <p class="inline"><?php the_field('research_topics'); ?></p>
-        <?php endif; ?>
         <?php if (get_field('specialist_topics')): ?>
           <div class = "expert-topics">
-            <h4 class="heading no-margin inline align-top">Specialist Topics:</h4>
+            <h4 class="heading no-margin inline align-top">Research Topics:</h4>
             <ul>
             <?php foreach (get_field('specialist_topics') as $value): ?>
               <li>

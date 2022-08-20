@@ -11,6 +11,7 @@ module.exports = {
   },
   plugins: [
     new ImageminPlugin({
+      disable: process.env.NODE_ENV !== 'production',
       externalImages: {
         context: '.',
         sources: glob.sync('assets/src/images/**/*.{png,jpg,svg,gif}'),

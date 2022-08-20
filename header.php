@@ -27,7 +27,7 @@ if (is_front_page()) {
       <i class="fas fa-search search <?php if(is_front_page()) { echo 'white'; } ?>"></i>
       <?php if(is_front_page()): echo get_custom_logo(); endif; ?>
       <?php if(!is_front_page()): ?>
-        <a href="<?php echo site_url() ?>" class="custom-logo-link" rel="home"><img width="721" height="190" src="<?php echo get_template_directory_uri(); ?>/assets/dist/images/logo-blue.svg" class="custom-logo" alt="The Arctic Institute"></a>
+        <a href="<?php echo site_url() ?>" class="custom-logo-link" rel="home"><img width="721" height="190" src="<?php echo get_template_directory_uri(); ?>/assets/dist/images/logo.png" class="custom-logo" alt="The Arctic Institute"></a>
       <?php endif; ?>
 
       <?php
