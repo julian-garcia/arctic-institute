@@ -62,6 +62,10 @@
       }
     }
 
+    .wp-block-quote {
+      @apply border-l-4 border-blue mb-4 pl-4 py-4 bg-grey-light;
+    }
+
     .wp-block-embed iframe {
       width: 100% !important;
     }
@@ -79,7 +83,7 @@
     }
 
     .meta {
-      @apply text-lg my-4 block;
+      @apply text-lg my-4 block font-normal;
   
       @screen sm {
         grid-template-columns: max-content min-content max-content;
@@ -105,14 +109,14 @@
       }
 
       .date {
-        @apply no-underline text-blue block;
+        @apply no-underline text-blue block font-normal;
       }
 
       .categories {
         @apply block uppercase relative md:text-center;
   
         a {
-          @apply text-blue no-underline;
+          @apply text-blue no-underline font-normal;
           &::before {
             content: none;
           }
@@ -133,7 +137,7 @@
     @apply my-4;
 
     a {
-      @apply underline text-black;
+      @apply underline text-black font-normal;
     }
   }
 

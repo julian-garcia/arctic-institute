@@ -59,11 +59,13 @@
     }
 
     .tags > span {
-      @apply text-blue text-base uppercase font-bold;
+      @apply text-blue text-base uppercase;
+      a { @apply font-semibold; }
     }
 
-    .date, .author { @apply text-base; }
+    .date, .author { @apply text-base font-normal; }
     .title { @apply block font-serif text-lg; }
+    .categories a { @apply font-semibold; }
 
     hr {
       max-width: 200px;

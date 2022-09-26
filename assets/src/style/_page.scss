@@ -41,6 +41,9 @@
   .md-flex {
     @apply hidden md:flex;
   }
+  ul {
+    @apply list-disc text-lg mb-4 ml-4 text-blue-dark;
+  }
 }
 
 .back {
@@ -167,7 +170,7 @@
   &.wp-block-columns > .wp-block-column:not(:first-child) { @apply ml-0; }
   ul {
     width: fit-content;
-    @apply -ml-0.5 md:ml-8 my-8 md:my-4;
+    @apply -ml-0.5 md:ml-8 my-8 md:my-4 list-none;
     li {
       @apply relative mb-4 font-serif text-lg cursor-pointer;
       &.active {

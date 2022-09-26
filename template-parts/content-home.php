@@ -7,9 +7,15 @@
   ));
   while($last_post->have_posts() ): $last_post->the_post(); ?>
 <?php if(get_the_post_thumbnail_url()): ?>
-<div class="home-feature-image" 
-     style="background-image: url(<?php the_post_thumbnail_url() ?>)">
-</div>
+  <?php if(get_the_category()[0]->slug == "take-five"): ?>
+    <div class="home-feature-image take-five-home"
+      style="background-image: url(<?php the_post_thumbnail_url() ?>)">
+    </div>
+  <?php else: ?>
+    <div class="home-feature-image" 
+        style="background-image: url(<?php the_post_thumbnail_url() ?>)">
+    </div>
+  <?php endif; ?>
 <?php else: ?>
 <div class="home-feature-image" 
      style="background-image: url(<?php echo $homepageFeature ?>)">
