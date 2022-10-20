@@ -54,7 +54,7 @@
     }
 
     &>a:first-of-type {
-      @apply p-0 block h-40 w-full bg-no-repeat bg-contain bg-center;
+      @apply p-0 block h-40 w-full bg-no-repeat bg-cover bg-center;
       overflow: hidden;
     }
 

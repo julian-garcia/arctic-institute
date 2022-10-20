@@ -15,10 +15,17 @@
 @import './footer';
 
 .custom-logo {
-  max-width: 280px;
+  max-width: 240px;
   @screen xs { max-width: 320px; }
   @screen sm { max-width: 350px; }
-  @apply md:pr-4;
+  @screen md { max-width: 400px; }
+  @screen lg { max-width: 350px; }
+  @screen xl { max-width: 400px; }
+  @apply p-0 block;
+}
+
+a.custom-logo-link {
+  @apply p-0;
 }
 
 @font-face {

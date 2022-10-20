@@ -21,6 +21,10 @@
       max-height: 550px;
     }
 
+    img {
+      @apply h-auto w-auto m-auto max-w-full max-h-40;
+    }
+
     .link {
       @apply absolute w-full h-full left-0 top-0 text-blue-dark;
     }
@@ -43,7 +47,8 @@
 
     .title {
       line-height: 1.2;
-      @apply mt-2 font-serif text-lg font-bold mb-1 text-blue-dark;
+      max-height: 72px;
+      @apply mt-2 font-serif text-lg font-bold mb-4 text-blue-dark overflow-y-hidden;
     }
 
     .category, .categories {

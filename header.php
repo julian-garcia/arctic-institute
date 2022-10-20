@@ -22,7 +22,7 @@ if (is_front_page()) {
 }
 ?>
   <div class="max-w-6xl mx-auto px-2 pt-4 sm:px-4 lg:px-8">
-    <div class="relative flex items-left text-white gap-8">
+    <div class="relative flex items-left text-white gap-4">
       <?php get_search_form() ?>
       <i class="fas fa-search search <?php if(is_front_page()) { echo 'white'; } ?>"></i>
       <?php if(is_front_page()): echo get_custom_logo(); endif; ?>
