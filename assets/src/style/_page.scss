@@ -87,6 +87,10 @@
     .wp-block-image { @apply mb-0; }
     img { height: unset; }
     h2 { @apply text-blue text-3xl }
+
+    .wp-block-column a {
+      @apply pt-0;
+    }
   }
 
   .wp-block-column {
