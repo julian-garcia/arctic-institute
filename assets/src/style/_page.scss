@@ -10,6 +10,10 @@
   &.country-feature {
     &::after { content: none; }
   }
+
+  + .content {
+    @apply mt-12;
+  }
 }
 
 .page-title {

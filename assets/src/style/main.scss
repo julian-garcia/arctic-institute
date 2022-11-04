@@ -77,6 +77,14 @@ p {
   &.has-text-align-center { @apply mx-auto }
 }
 
+ul {
+  @apply max-w-3xl;
+
+  li {
+    @apply mb-4;
+  }
+}
+
 a {
   @apply font-extrabold;
 }

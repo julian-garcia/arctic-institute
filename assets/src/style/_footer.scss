@@ -38,4 +38,8 @@
       @apply flex-grow;
     }
   }
+
+  .content + & {
+    @apply mt-16;
+  }
 }
