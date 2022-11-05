@@ -1,6 +1,8 @@
 import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 import '@fortawesome/fontawesome-free/scss/brands.scss';
 import '@fortawesome/fontawesome-free/scss/solid.scss';
+import 'cookieconsent/build/cookieconsent.min.js';
+import 'cookieconsent/build/cookieconsent.min.css';
 import './main.css';
 import './style/main.scss';
 import './script/values';
@@ -8,6 +10,7 @@ import './script/approach';
 import './script/search';
 import './script/calendar';
 import './script/experts';
+import './script/cookie-consent';
 import {hideSearch} from './script/search';
 
 if ( window.history.replaceState ) {

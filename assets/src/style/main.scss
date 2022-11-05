@@ -113,3 +113,39 @@ h3.heading {
 h4.heading {
   @apply text-lg;
 }
+
+.cc-window.cc-floating {
+  @apply rounded-none;
+
+  * {
+    @apply font-sans;
+  }
+
+  .cc-link {
+    @apply p-0 text-base text-blue-dark;
+
+    &:visited {
+      @apply text-blue-dark;
+    }
+  }
+
+  .cc-compliance {
+    @apply gap-6;
+    
+    .cc-btn {
+      @apply rounded-none uppercase py-3;
+    }
+    .cc-btn.cc-allow {
+      &:hover {
+        @apply bg-blue-dark;
+      }
+    }
+    .cc-btn.cc-deny {
+      @apply border-2 border-solid border-blue text-blue no-underline;
+
+      &:hover {
+        @apply bg-blue text-white no-underline;
+      }
+    }
+  }
+}

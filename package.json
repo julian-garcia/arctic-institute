@@ -34,5 +34,7 @@
     "webpack-merge": "^5.8.0"
   },
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "cookieconsent": "^3.1.1"
+  }
 }
