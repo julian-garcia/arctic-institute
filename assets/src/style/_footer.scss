@@ -2,7 +2,7 @@
   .copyright {
     p { @apply mx-auto mb-0; }
     a {
-      @apply text-black inline-block mx-2 text-lg mt-4;
+      @apply text-black inline-block;
       &::after {
         background-image: none;
       }

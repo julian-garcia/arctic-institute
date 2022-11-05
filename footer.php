@@ -8,7 +8,8 @@
         </div>
       </div>
       <div class="py-8 text-lg text-center copyright">
-        <p class="mx-auto text-black-dark text-base">&copy; The Arctic Institute, <script>document.write(new Date().getFullYear());</script>. All rights reserved. Privacy Policy.</p>
+        <p class="mx-auto text-black-dark text-base">&copy; The Arctic Institute, <script>document.write(new Date().getFullYear());</script>. All rights reserved.
+        <a href="/privacy-policy">Privacy Policy</a>.</p>
         <?php dynamic_sidebar('footer-1'); ?>
       </div>
     </footer>
