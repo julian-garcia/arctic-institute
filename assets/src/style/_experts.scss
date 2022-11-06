@@ -105,7 +105,7 @@
 .expert-topics {
   @apply mt-1;
   ul { max-width: 450px; @apply inline-block; }
-  li { @apply inline-block mr-2; }
+  li { @apply inline-block mr-2 mb-0; }
   li > a {
     @apply relative pl-0 text-lg;
     &::before {
