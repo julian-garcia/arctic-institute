@@ -65,6 +65,12 @@
       li {
         @apply mb-0;
       }
+      li:first-child a {
+        @apply mt-2;
+      }
+      li:last-child a {
+        @apply mb-2;
+      }
     }
   }
 }
