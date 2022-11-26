@@ -115,8 +115,9 @@
     @apply text-blue block clear-both mb-8 mt-4;
   }
   ul {
-    @apply list-disc;
+    @apply list-disc ml-4;
     li {
+      @apply font-sans text-blue-dark mb-0 text-lg;
       &::before, &:not(.active)::after {
         content: none;
       }

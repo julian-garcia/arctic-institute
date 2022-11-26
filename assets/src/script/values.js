@@ -12,7 +12,8 @@ document.querySelectorAll('.values').forEach(values => {
     if (i == 0) { group.classList.remove('hidden'); }
   });
   values.addEventListener('click', e => {
-    if (e.target.nodeName === 'LI') {
+    const classes = e.target.parentNode.parentNode.parentNode.parentNode.classList;
+    if (e.target.nodeName === 'LI' && !classes.contains('country-content')) {
       values.querySelectorAll('li').forEach((li, i) => {
         li.classList.remove('active');
       });
