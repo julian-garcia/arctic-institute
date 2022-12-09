@@ -121,7 +121,7 @@
 .publication-types {
   max-width: 700px;
   .button {
-    margin-top: 0;
+    @apply mt-0 mr-2;
   }
   .type-text {
     display: none;

@@ -19,9 +19,13 @@
         </p><br>
         <?php endif; ?>
         <h4 class="heading no-margin inline">Working Location:</h4>
-        <p class="inline"><?php echo $working_location ?></p><br>
+        <p class="inline">
+          <?php echo $working_location ?>
+        </p><br>
         <h4 class="heading no-margin inline">Languages:</h4> 
-        <p class="inline"><?php echo $languages ?></p><br>
+        <p class="inline">
+          <?php echo $languages ?>
+        </p><br>
         <?php if (get_field('specialist_topics')): ?>
           <div class = "expert-topics">
             <h4 class="heading no-margin inline align-top">Research Topics:</h4>
