@@ -147,7 +147,31 @@ function series_post_list() {
   }
 }
 
-add_shortcode( 'series', 'series_post_list' );
+function impact_reports($attr,$content){
+  return '<div class="impact-grid">'.do_shortcode($content).'</div>';
+}
+
+function impact_report( $atts = [], $content = null, $tag = '' ) {
+	$wporg_atts = shortcode_atts(
+		array(
+			'link' => '',
+			'image' => '',
+		), $atts, $tag
+	);
+
+  return $first . "<a href='" . $wporg_atts['link'] . 
+  "' target='_blank' rel='noopener noreferrer' class='impact-grid-item'>" . 
+  "<img src='" . $wporg_atts['image'] . "' alt=''>" . 
+  "</a>";
+}
+
+function shortcodes_init() {
+  add_shortcode( 'series', 'series_post_list' );
+	add_shortcode( 'impact_report', 'impact_report' );
+	add_shortcode( 'impact_reports', 'impact_reports' );
+}
+
+add_action( 'init', 'shortcodes_init' );
 add_filter( 'nav_menu_css_class', 'add_menu_class', 10, 4 );
 add_action( 'after_setup_theme', 'config_theme_support' );
 add_action( 'wp_enqueue_scripts', 'enqueue_styles' );

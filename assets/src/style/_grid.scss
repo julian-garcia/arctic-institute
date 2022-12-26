@@ -70,7 +70,7 @@
 
     @screen lg {
       @apply grid-cols-4;
-    }
+    } 
 
     >.wp-block-cover {
       min-height: 330px;
@@ -86,5 +86,17 @@
     .wp-block-post {
       @apply bg-white p-4;
     }
+  }
+}
+
+.impact-grid {
+  @apply grid xs:grid-cols-2 md:grid-cols-3 mx-4 sm:mx-auto max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-3xl gap-6 justify-center;
+
+  br {
+    @apply hidden;
+  }
+
+  .impact-grid-item img {
+    @apply object-cover w-full h-full;
   }
 }
