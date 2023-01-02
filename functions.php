@@ -119,7 +119,7 @@ function expert_post_type() {
 
 function set_posts_per_page( $query ) {
   if ( ($query->is_search() || $query->is_archive()) && !is_page('media') && !is_page('the-arctic-this-week-newsletter') ) {
-    $query->set( 'posts_per_page', 10 );
+    $query->set( 'posts_per_page', 9 );
   }
   if (is_page('experts')) {
     $query->set( 'posts_per_page', -1 );

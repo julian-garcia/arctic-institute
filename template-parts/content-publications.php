@@ -19,7 +19,7 @@
   } 
 ?>
 
-<form action="/publications" method="post" class="filters">
+<form action="/publications" method="post" class="filters" id="publicationFilter">
   <h2>Filter By</h2>
   <div class="sm:flex gap-6 items-end flex-wrap">
     <div>
@@ -89,25 +89,29 @@
 <div id="publications" class="publications masonry">
   <?php
     $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+    $tagParam = 'tag_slug__in';
 
     if($_POST['type'] || $_POST['topic'] || $_POST['country'] ) {
       if (!$_POST['topic'] && !$_POST['country']) {
         $slugs = array();
       } else {
         $slugs = array($_POST['topic'], $_POST['country']);
+        if($_POST['topic'] && $_POST['country']) {
+          $tagParam = 'tag_slug__and';
+        }
       }
 
       $post_query = new WP_Query(array( 
         'post_type' => 'post', 
-        'posts_per_page' => 12,
+        'posts_per_page' => 9,
         'category_name' => $_POST['type'],
-        'tag_slug__in' => $slugs,
+        $tagParam => $slugs,
         'paged' => $paged,
       ));
     } else {
       $post_query = new WP_Query(array( 
         'post_type' => 'post', 
-        'posts_per_page' => 12,
+        'posts_per_page' => 9,
         'paged' => $paged,
       ));
     }
