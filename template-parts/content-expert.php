@@ -7,29 +7,29 @@
       <h1 class="text-4xl"><?php wp_title(''); ?></h1>
       <p class="text-2xl max-w-md mt-3"><?php echo $headline ?></p>
       <p class="mb-0">
-        <h4 class="heading no-margin inline">Email:</h4> 
+        <h4 class="heading no-margin inline"><?php echo $emailLabel ?>:</h4> 
         <p class="inline mb-0">
           <a href="mailto: <?php echo $email ?>"><?php echo $email ?></a>
         </p><br>
         <?php if ($twitter): ?>
-        <h4 class="heading no-margin inline">Twitter:</h4> 
-        <p class="inline">
-          <a href="https://twitter.com/<?php echo $twitter ?>" target="_blank">
-          <?php echo $twitter ?></a>
-        </p><br>
+          <h4 class="heading no-margin inline"><?php echo $twitterLabel ?>:</h4> 
+          <p class="inline">
+            <a href="https://x.com/<?php echo $twitter ?>" target="_blank">
+            <?php echo $twitter ?></a>
+          </p><br>
         <?php endif; ?>
         <?php if ($bluesky): ?>
-        <h4 class="heading no-margin inline">Bluesky:</h4> 
-        <p class="inline">
-          <a href="https://bsky.app/profile/<?php echo $bluesky ?>.bsky.social" target="_blank">
-          <?php echo $bluesky ?></a>
-        </p><br>
+          <h4 class="heading no-margin inline"><?php echo $blueskyLabel ?>:</h4> 
+          <p class="inline">
+            <a href="https://bsky.app/profile/<?php echo $bluesky ?>.bsky.social" target="_blank">
+            <?php echo $bluesky ?></a>
+          </p><br>
         <?php endif; ?>
-        <h4 class="heading no-margin inline">Working Location:</h4>
+        <h4 class="heading no-margin inline"><?php echo $locationLabel ?>:</h4>
         <p class="inline">
           <?php echo $working_location ?>
         </p><br>
-        <h4 class="heading no-margin inline">Languages:</h4> 
+        <h4 class="heading no-margin inline"><?php echo $languagesLabel ?>:</h4> 
         <p class="inline">
           <?php echo $languages ?>
         </p><br>
