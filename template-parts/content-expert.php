@@ -18,6 +18,13 @@
           <?php echo $twitter ?></a>
         </p><br>
         <?php endif; ?>
+        <?php if ($bluesky): ?>
+        <h4 class="heading no-margin inline">Bluesky:</h4> 
+        <p class="inline">
+          <a href="https://bsky.app/profile/<?php echo $bluesky ?>.bsky.social" target="_blank">
+          <?php echo $bluesky ?></a>
+        </p><br>
+        <?php endif; ?>
         <h4 class="heading no-margin inline">Working Location:</h4>
         <p class="inline">
           <?php echo $working_location ?>
