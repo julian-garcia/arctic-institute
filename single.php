@@ -76,3 +76,6 @@
   </div>
 </div>
 <?php get_footer(); ?>
+<?php if (get_field('donate_popup')) {
+  get_template_part('template-parts/content', 'popup');
+} ?>

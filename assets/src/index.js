@@ -12,6 +12,7 @@ import './script/calendar';
 import './script/experts';
 import './script/cookie-consent';
 import './script/publication-filter';
+import './script/popups';
 import {hideSearch} from './script/search';
 
 if ( window.history.replaceState ) {
