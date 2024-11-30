@@ -23,7 +23,7 @@ function togglePopup(show = true) {
     }
     
     let expires = new Date();
-    expires = expires.setHours(expires.getHours() + 1);
+    expires = expires.setMinutes(expires.getMinutes() + 10);
     sessionStorage.setItem( 'arcticDonatePopup', expires );
   }
 
