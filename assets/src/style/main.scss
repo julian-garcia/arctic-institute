@@ -29,20 +29,27 @@ a.custom-logo-link {
 }
 
 @font-face {
-  font-family: Proxima;
-  font-weight: 600;
-  src: url(../fonts/proxima-nova.woff);
+  font-family: Nunito;
+  font-style: italic;
+  src: url(../fonts/NunitoSans-Italic.woff);
 }
 
 @font-face {
-  font-family: Proxima;
+  font-family: Nunito;
+  font-weight: 400;
+  src: url(../fonts/NunitoSans.woff);
+}
+
+@font-face {
+  font-family: Nunito;
   font-weight: bold;
-  src: url(../fonts/proxima-nova-bold.woff);
+  src: url(../fonts/NunitoSans.woff);
 }
 
 @font-face {
-  font-family: ProximaBold;
-  src: url(../fonts/proxima-nova-bold.woff);
+  font-family: NunitoBold;
+  font-weight: 800;
+  src: url(../fonts/NunitoSans.woff);
 }
 
 h1 {
