@@ -3,8 +3,8 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   theme: {
     fontFamily: {
-      title: ['NunitoBold', 'sans-serif'],
-      sans: ['Nunito', 'sans-serif'],
+      title: ['proxima-nova', 'sans-serif'],
+      sans: ['proxima-nova', 'sans-serif'],
       serif: ['PT Serif', 'serif'],
     },
     colors: {
